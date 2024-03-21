@@ -1,18 +1,10 @@
-import { formatString } from "@/utils/utils";
-import {
-  IconBadge4k,
-  IconBadge4kFilled,
-  IconBadge8k,
-  IconBadge8kFilled,
-  IconDownload,
-  IconDownloadOff,
-} from "@tabler/icons-react";
-import { useState } from "react";
-import Icon4k from "../../icon/Icon4k";
-import AnimatedButton from "../buttons/AnimatedButton";
+import { formatString, getDuration } from "@/utils/utils";
 import { Text, Title } from "@mantine/core";
+import { IconBadge4k, IconBadge8k, IconDownload } from "@tabler/icons-react";
+import { useState } from "react";
+import AnimatedButton from "../buttons/AnimatedButton";
 
-const DownloadLinkCard = ({ format, videoUrl }) => {
+const AudioDownloadCard = ({ format }) => {
   const [isDownloading, setIsDownloading] = useState(false);
 
   // async function downloadVideo(format: string) {
@@ -89,22 +81,12 @@ const DownloadLinkCard = ({ format, videoUrl }) => {
     <div key={format?.itag} className="download_card">
       <div>
         <Title size={"h4"} className="font-bold flex gap-1">
-          <div className="flex gap-1">
-            {format?.qualityLabel}{" "}
-            {checkResolution() === "4K" ? (
-              <IconBadge4k />
-            ) : checkResolution() === "8K" ? (
-              <IconBadge8k />
-            ) : null}
-            {/* <IconBadge4kFilled /> */}
-          </div>
-          {format?.audioQuality ? (
-            <span>({formatString(format?.audioQuality)})</span>
-          ) : (
-            ""
-          )}
+          {format?.audioBitrate}KBPS
         </Title>
-        <Text>{format?.fps} FPS</Text>
+        <Text>{format?.fps}</Text>
+        <Text>
+          {getDuration(Number(format?.approxDurationMs) || 0)} Minutes
+        </Text>
       </div>
       <div>
         <AnimatedButton
@@ -121,4 +103,4 @@ const DownloadLinkCard = ({ format, videoUrl }) => {
   );
 };
 
-export default DownloadLinkCard;
+export default AudioDownloadCard;

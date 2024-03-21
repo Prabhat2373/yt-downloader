@@ -11,11 +11,13 @@ import { useEffect, useState } from "react";
 import IconStars from "@/components/icon/IconStars";
 import { UrlInput } from "@/components/ui/UrlInput";
 import { Text, Title } from "@mantine/core";
+import AudioDownloadCard from "@/components/ui/cards/AudioDownloadCard";
 
 export default function YoutubeDownloaderContainer() {
   // const [formats,setFormats]
   const [isLoading, setIsLoading] = useState(false);
-  const [downloadFormats, setDownloadFormats] = useState([]);
+  const [videoFormats, setVideoFormats] = useState([]);
+  const [audioFormats, setAudioFormats] = useState([]);
   const [videoUrl, setVideoUrl] = useState(
     "https://youtu.be/hwNWx1GTSKo?si=PG_P_Zv73RyE0Wkt"
   );
@@ -29,8 +31,10 @@ export default function YoutubeDownloaderContainer() {
       },
       body: JSON.stringify({ url: videoUrl }),
     }).then((response) => response.json());
-    if (info?.formats) {
-      setDownloadFormats(info?.formats);
+    if (info) {
+      // setDownloadFormats(info?.formats);
+      setVideoFormats(info?.video_formats || []);
+      setAudioFormats(info?.audio_formats || []);
       setIsLoading(false);
     }
     setIsLoading(false);
@@ -40,8 +44,8 @@ export default function YoutubeDownloaderContainer() {
   //   fetchFormats();
   // }, []);
 
-  console.log('downloadFormats',downloadFormats);
-  
+  // console.log("downloadFormats", downloadFormats);
+
   return (
     <>
       <Hero>
@@ -87,51 +91,56 @@ export default function YoutubeDownloaderContainer() {
           </div>
         </div>
 
-        {downloadFormats?.length ? (
-          <div className="download_card_container">
-            <div className="text-center w-full">
-              <Title size={"xl"}>Video Formats</Title>
-              <hr className="w-full" style={{ opacity: "60%" }} />
-            </div>
-            {downloadFormats
-              ?.filter(
-                (fmt) =>
-                  fmt?.qualityLabel !== null &&
-                  //   fmt?.hasVideo &&
-                  //   fmt?.hasAudio &&
-                  fmt?.container === "mp4"
-              )
-              ?.map((format) => {
-                return (
-                  <DownloadLinkCard
-
-                    format={format}
-                    videoUrl={videoUrl}
-                    key={format?.itag}
-                  />
-                );
-              })}
-            {/* <hr className="w-full" style={{opacity:'60%'}} /> */}
-            <div className="text-center w-full">
-              <Title size={"xl"}>Audio Formats</Title>
-              <hr className="w-full" style={{ opacity: "60%" }} />
-            </div>
-            {downloadFormats
-              ?.filter(
-                (fmt) => fmt?.hasAudio
-                // fmt?.mimeType?.startsWith("audio/")
-              )
-              ?.map((format) => {
-                return (
-                  <DownloadLinkCard
-                    format={format}
-                    videoUrl={videoUrl}
-                    key={format?.itag}
-                  />
-                );
-              })}
-          </div>
-        ) : null}
+        <div className="download_card_container">
+          {videoFormats?.length ? (
+            <>
+              <div className="text-center w-full">
+                <Title size={"xl"}>Video Formats</Title>
+                <hr className="w-full" style={{ opacity: "60%" }} />
+              </div>
+              {videoFormats
+                ?.filter(
+                  (fmt) =>
+                    fmt?.qualityLabel !== null &&
+                    //   fmt?.hasVideo &&
+                    //   fmt?.hasAudio &&
+                    fmt?.container === "mp4"
+                )
+                ?.map((format) => {
+                  return (
+                    <DownloadLinkCard
+                      format={format}
+                      videoUrl={videoUrl}
+                      key={format?.itag}
+                    />
+                  );
+                })}
+            </>
+          ) : null}
+          {/* <hr className="w-full" style={{opacity:'60%'}} /> */}
+          {audioFormats?.length ? (
+            <>
+              <div className="text-center w-full">
+                <Title size={"xl"}>Audio Formats</Title>
+                <hr className="w-full" style={{ opacity: "60%" }} />
+              </div>
+              {audioFormats
+                ?.filter(
+                  (fmt) => fmt?.hasAudio
+                  // fmt?.mimeType?.startsWith("audio/")
+                )
+                ?.map((format) => {
+                  return (
+                    <AudioDownloadCard
+                      format={format}
+                      videoUrl={videoUrl}
+                      key={format?.itag}
+                    />
+                  );
+                })}
+            </>
+          ) : null}
+        </div>
       </Hero>
     </>
   );
