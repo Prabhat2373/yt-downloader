@@ -12,6 +12,7 @@ import IconStars from "@/components/icon/IconStars";
 import { UrlInput } from "@/components/ui/UrlInput";
 import { Text, Title } from "@mantine/core";
 import AudioDownloadCard from "@/components/ui/cards/AudioDownloadCard";
+import { toast } from "react-toastify";
 
 export default function YoutubeDownloaderContainer() {
   // const [formats,setFormats]
@@ -23,21 +24,26 @@ export default function YoutubeDownloaderContainer() {
   );
 
   const fetchFormats = async () => {
-    setIsLoading(true);
-    const info = await fetch("http://localhost:8000/info", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ url: videoUrl }),
-    }).then((response) => response.json());
-    if (info) {
-      // setDownloadFormats(info?.formats);
-      setVideoFormats(info?.video_formats || []);
-      setAudioFormats(info?.audio_formats || []);
+    try {
+      setIsLoading(true);
+      const info = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/info`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: videoUrl }),
+      }).then((response) => response.json());
+      if (info) {
+        // setDownloadFormats(info?.formats);
+        setVideoFormats(info?.video_formats || []);
+        setAudioFormats(info?.audio_formats || []);
+        setIsLoading(false);
+      }
       setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      toast.error("Ohh! Something Went Wrong");
     }
-    setIsLoading(false);
   };
 
   // useEffect(() => {

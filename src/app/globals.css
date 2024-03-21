@@ -248,3 +248,40 @@
 .text-center {
   text-align: center;
 }
+
+.checkerboard {
+  background-color: #fff; /* sets the background color to white */
+  background-image: repeating-linear-gradient(
+    to right,
+    #fff 0%,
+    #fff 10px,
+    #ddd 10px,
+    #ddd 20px
+  ); /* creates vertical stripes */
+  background-size: 20px 100%; /* defines the width of each stripe */
+  background-repeat: repeat; /* repeats the stripes pattern */
+  width: 200px;
+  height: 200px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.square {
+  /* width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid black;
+  margin: 2px; */
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
