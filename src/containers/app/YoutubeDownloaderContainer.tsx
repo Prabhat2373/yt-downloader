@@ -13,9 +13,11 @@ import { UrlInput } from "@/components/ui/UrlInput";
 import { Text, Title } from "@mantine/core";
 import AudioDownloadCard from "@/components/ui/cards/AudioDownloadCard";
 import { toast } from "react-toastify";
+import TabsComponent from "@/components/ui/tabs/Tabs";
 
 export default function YoutubeDownloaderContainer() {
   // const [formats,setFormats]
+  const [active, setActive] = useState("video");
   const [isLoading, setIsLoading] = useState(false);
   const [videoFormats, setVideoFormats] = useState([]);
   const [audioFormats, setAudioFormats] = useState([]);
@@ -96,14 +98,19 @@ export default function YoutubeDownloaderContainer() {
             </AnimatedButton>
           </div>
         </div>
+        {videoFormats?.length || audioFormats?.length ? (
+          <div className="flex justify-center w-full tab-container">
+            <TabsComponent active={active} setActive={setActive} />
+          </div>
+        ) : null}
 
         <div className="download_card_container">
-          {videoFormats?.length ? (
+          {videoFormats?.length && active == "video" ? (
             <>
-              <div className="text-center w-full">
+              {/* <div className="text-center w-full">
                 <Title size={"xl"}>Video Formats</Title>
                 <hr className="w-full" style={{ opacity: "60%" }} />
-              </div>
+              </div> */}
               {videoFormats
                 ?.filter(
                   (fmt) =>
@@ -124,12 +131,12 @@ export default function YoutubeDownloaderContainer() {
             </>
           ) : null}
           {/* <hr className="w-full" style={{opacity:'60%'}} /> */}
-          {audioFormats?.length ? (
+          {audioFormats?.length && active == "audio" ? (
             <>
-              <div className="text-center w-full">
+              {/* <div className="text-center w-full">
                 <Title size={"xl"}>Audio Formats</Title>
                 <hr className="w-full" style={{ opacity: "60%" }} />
-              </div>
+              </div> */}
               {audioFormats
                 ?.filter(
                   (fmt) => fmt?.hasAudio

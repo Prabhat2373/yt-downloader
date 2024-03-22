@@ -243,6 +243,8 @@
   padding: 15px;
   border-radius: 18px;
   background: #babaf359;
+  margin-top: 3px;
+  margin-bottom: 7px;
 }
 
 .text-center {
@@ -284,4 +286,12 @@
   background-color: white;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.tab-container {
+  margin-top: 20px;
 }

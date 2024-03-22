@@ -6,6 +6,7 @@ import {
   IconBadge8kFilled,
   IconDownload,
   IconDownloadOff,
+  IconVolume3,
 } from "@tabler/icons-react";
 import { useState } from "react";
 import Icon4k from "../../icon/Icon4k";
@@ -95,6 +96,16 @@ const DownloadLinkCard = ({ format, videoUrl }) => {
               <IconBadge4k />
             ) : checkResolution() === "8K" ? (
               <IconBadge8k />
+            ) : null}
+            {/* {!format?.hasAudio ? } */}
+            {!format?.hasAudio ? (
+              <>
+                <IconVolume3
+                  style={{
+                    paddingLeft: "3px",
+                  }}
+                />
+              </>
             ) : null}
             {/* <IconBadge4kFilled /> */}
           </div>
