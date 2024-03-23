@@ -51,12 +51,12 @@ const AnimatedButton = ({ children, isLoading, ...props }) => {
       // size="xl"
       className={classes.control}
       // mt={10}
-      
+
       loading={isLoading}
       {...props}
     >
-      {/* {children} */}
-      GET LINK
+      {children}
+      {/* GET LINK */}
     </Button>
   );
 };

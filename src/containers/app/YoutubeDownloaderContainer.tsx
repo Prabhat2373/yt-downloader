@@ -6,14 +6,15 @@ import Hero from "@/components/hero/Hero";
 import Icon4k from "@/components/icon/Icon4k";
 import IconLink from "@/components/icon/IconLink";
 import AnimatedButton from "@/components/ui/buttons/AnimatedButton";
-import Image from "next/image";
+// import Image from "next/image";
 import { useEffect, useState } from "react";
 import IconStars from "@/components/icon/IconStars";
 import { UrlInput } from "@/components/ui/UrlInput";
-import { Flex, Grid, Text, Title } from "@mantine/core";
+import { Badge, Card, Flex, Grid, Image, Text, Title } from "@mantine/core";
 import AudioDownloadCard from "@/components/ui/cards/AudioDownloadCard";
 import { toast } from "react-toastify";
 import TabsComponent from "@/components/ui/tabs/Tabs";
+import { convertSecondsToMinutes } from "@/utils/utils";
 
 export default function YoutubeDownloaderContainer() {
   // const [formats,setFormats]
@@ -21,6 +22,7 @@ export default function YoutubeDownloaderContainer() {
   const [isLoading, setIsLoading] = useState(false);
   const [videoFormats, setVideoFormats] = useState([]);
   const [audioFormats, setAudioFormats] = useState([]);
+  const [meta, setMeta] = useState({});
   const [videoUrl, setVideoUrl] = useState(
     "https://youtu.be/hwNWx1GTSKo?si=PG_P_Zv73RyE0Wkt"
   );
@@ -39,6 +41,7 @@ export default function YoutubeDownloaderContainer() {
         // setDownloadFormats(info?.formats);
         setVideoFormats(info?.video_formats || []);
         setAudioFormats(info?.audio_formats || []);
+        setMeta(info?.meta || {});
         setIsLoading(false);
       }
       setIsLoading(false);
@@ -54,6 +57,7 @@ export default function YoutubeDownloaderContainer() {
 
   // console.log("downloadFormats", downloadFormats);
 
+  console.log("meta", meta);
   return (
     <>
       <Hero>
@@ -103,6 +107,43 @@ export default function YoutubeDownloaderContainer() {
             </Grid>
           </div>
         </div>
+        {meta?.title?<div className="thumbnail_container">
+          {/* <Image
+            radius="md"
+            src={
+              meta?.thumbnails?.[meta?.thumbnails?.length - 1]?.url ??
+              "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+            }
+          />
+          <Text>{meta?.title ?? "-"}</Text> */}
+
+          <Card shadow="sm" padding="lg" radius="md" withBorder w={400}>
+            <Card.Section>
+              <Image
+                // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                src={
+                  meta?.thumbnails?.[meta?.thumbnails?.length - 1]?.url ??
+                  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+                }
+                // height={160}
+                alt="Norway"
+              />
+            </Card.Section>
+            <Badge
+              pos={"absolute"}
+              right={2}
+              bottom={88}
+              radius="md"
+              color="black"
+            >
+              {convertSecondsToMinutes(meta?.lengthSeconds)}
+            </Badge>
+
+            <Text size="sm" c="dimmed">
+              {meta?.title ?? "-"} 
+            </Text>
+          </Card>
+        </div>:null}
         {videoFormats?.length || audioFormats?.length ? (
           <div className="flex justify-center w-full tab-container">
             <TabsComponent active={active} setActive={setActive} />
@@ -117,6 +158,44 @@ export default function YoutubeDownloaderContainer() {
                 <hr className="w-full" style={{ opacity: "60%" }} />
               </div> */}
               {videoFormats
+                .sort((a, b) => {
+                  console.log("first", a);
+                  console.log("second", b);
+                  // Case 1: Both true
+                  if (
+                    a?.hasAudio &&
+                    a?.hasVideo &&
+                    !b?.hasAudio &&
+                    !b?.hasVideo
+                  ) {
+                    return -1; // a should come before b
+                  }
+                  if (
+                    !a?.hasAudio &&
+                    !a?.hasVideo &&
+                    b?.hasAudio &&
+                    b?.hasVideo
+                  ) {
+                    return 1; // b should come before a
+                  }
+
+                  // Case 2: Only one true for 'a'
+                  if (
+                    a?.hasAudio ||
+                    (a?.hasVideo && !(b?.hasAudio || b?.hasVideo))
+                  ) {
+                    return -1; // a should come before b
+                  }
+                  if (
+                    (!(a?.hasAudio || a?.hasVideo) && b?.hasAudio) ||
+                    b?.hasVideo
+                  ) {
+                    return 1; // b should come before a
+                  }
+
+                  // Case 3: No other differences
+                  return 0; // Leave order unchanged
+                })
                 ?.filter(
                   (fmt) =>
                     fmt?.qualityLabel !== null &&

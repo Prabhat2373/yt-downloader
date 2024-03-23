@@ -85,7 +85,8 @@ const AudioDownloadCard = ({ format }) => {
         </Title>
         <Text>{format?.fps}</Text>
         <Text>
-          {getDuration(Number(format?.approxDurationMs) || 0)} Minutes
+          Duration : {getDuration(Number(format?.approxDurationMs) || 0)}{" "}
+          Minutes
         </Text>
       </div>
       <div>
@@ -93,6 +94,7 @@ const AudioDownloadCard = ({ format }) => {
           icon={<IconDownload />}
           isLoading={isDownloading}
           onClick={() => downloadVideo(format?.itag)}
+          size="md"
           // className="bg-green-500 text-white px-4 py-2 rounded-md mt-2"
         >
           {/* {isDownloading ? <Loader /> : "Download"} */}
