@@ -10,7 +10,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import IconStars from "@/components/icon/IconStars";
 import { UrlInput } from "@/components/ui/UrlInput";
-import { Text, Title } from "@mantine/core";
+import { Flex, Grid, Text, Title } from "@mantine/core";
 import AudioDownloadCard from "@/components/ui/cards/AudioDownloadCard";
 import { toast } from "react-toastify";
 import TabsComponent from "@/components/ui/tabs/Tabs";
@@ -58,44 +58,49 @@ export default function YoutubeDownloaderContainer() {
     <>
       <Hero>
         <div className="url_container_top">
-          <div className="w-full flex gap-2 url_container_bottom">
-            <div className="w-full ">
-              <div className="flex items-center   w-full px-3 gap-2 rounded-2xl ">
-                {/* <input
+          {/* <div className="w-full flex gap-2 url_container_bottom"> */}
+          <div className="url_container_bottom">
+            {/* <Grid columns={4} align="center" content="center"> */}
+            <Grid grow gutter="xs" columns={12} align="center">
+              {/* <Grid.Col span={{ base: 3, sm: 3, lg: 3 }}> */}
+              <Grid.Col span={8}>
+                <div className="">
+                  {/* <div className="flex items-center   w-full  gap-2 rounded-2xl "> */}
+                  <div className="">
+                    {/* <input
                 type="url"
                 onChange={(e) => setVideoUrl(e?.target?.value)}
                 className="w-full  rounded-3xl outline-none py-3"
                 placeholder="Paste Youtube Video URL.."
               /> */}
-                <UrlInput
-                  // style={{
-                  //   paddingTop: "20px",
-                  //   paddingBottom: "20px",
-                  // }}
-                  value={videoUrl}
-                  type="url"
-                  onChange={(e) => setVideoUrl(e?.target?.value)}
-                  className="w-full  rounded-3xl outline-none py-3"
-                  placeholder="Paste Youtube Video URL.."
-                />
-              </div>
-            </div>
-            {/* <button
-              onClick={fetchFormats}
-              disabled={!videoUrl || isLoading}
-              // className="bg-blue-500 text-white px-4 py-2 rounded-xl ml-2"
-              className="cursor-pointer text-white font-bold relative text-[14px] w-[9em] h-[3em] text-center bg-gradient-to-r from-violet-500 from-10% via-sky-500 via-30% to-pink-500 to-90% bg-[length:400%] rounded-[30px] z-10 hover:animate-gradient-xy hover:bg-[length:100%] before:content-[''] before:absolute before:-top-[5px] before:-bottom-[5px] before:-left-[5px] before:-right-[5px] before:bg-gradient-to-r before:from-violet-500 before:from-10% before:via-sky-500 before:via-30% before:to-pink-500 before:bg-[length:400%] before:-z-10 before:rounded-[35px] before:hover:blur-xl before:transition-all before:ease-in-out before:duration-[1s] before:hover:bg-[length:10%] active:bg-violet-700 focus:ring-violet-700"
-            >
-              {isLoading ? <Loader /> : "Submit"}
-            </button> */}
-            <AnimatedButton
-              icon={<IconStars />}
-              onClick={fetchFormats}
-              disabled={!videoUrl || isLoading}
-              isLoading={isLoading}
-            >
-              GET LINK
-            </AnimatedButton>
+                    <UrlInput
+                      // style={{
+                      //   paddingTop: "20px",
+                      //   paddingBottom: "20px",
+                      // }}
+                      value={videoUrl}
+                      type="url"
+                      onChange={(e) => setVideoUrl(e?.target?.value)}
+                      className="w-full  rounded-3xl outline-none py-3"
+                      placeholder="Paste Youtube Video URL.."
+                    />
+                  </div>
+                </div>
+              </Grid.Col>
+
+              {/* <Grid.Col span={{ base: 2, sm: 1, lg: 1 }}> */}
+              <Grid.Col span={4}>
+                <AnimatedButton
+                  icon={<IconStars />}
+                  onClick={fetchFormats}
+                  disabled={!videoUrl || isLoading}
+                  isLoading={isLoading}
+                  size="md"
+                >
+                  GET LINK
+                </AnimatedButton>
+              </Grid.Col>
+            </Grid>
           </div>
         </div>
         {videoFormats?.length || audioFormats?.length ? (

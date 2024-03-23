@@ -113,8 +113,10 @@ function Hero({ children }) {
           <div className="square"></div>
           <div className="square"></div>
         </div> */}
-        <div>
-          <Container mt={20}>{children}</Container>
+        <div className="hero_content_container">
+          {/* <Container mt={20} size={"xl"}> */}
+          {children}
+          {/* </Container> */}
           {/* <div className="hero-pattern "></div> */}
         </div>
         {/* <div

@@ -1,4 +1,10 @@
-@tailwind base;
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@layer tailwind {
+  @tailwind base;
+}
 @tailwind components;
 @tailwind utilities;
 
@@ -222,6 +228,15 @@
   background: #babaf359;
   padding: 20px;
   border-radius: 17px;
+  /* display: flex;
+  gap: 7px; */
+}
+@media screen and (max-width: 580px) {
+  .url_container_bottom {
+    /* background-color: lightgreen; */
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .justify-between {
@@ -294,4 +309,17 @@
 
 .tab-container {
   margin-top: 20px;
+}
+
+
+.hero_content_container{
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+@media screen and (max-width: 580px) {
+  .hero_content_container {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
 }

@@ -25,26 +25,39 @@
 
 // export default AnimatedButton;
 
-import { Loader } from "@mantine/core";
+import { Button, Loader } from "@mantine/core";
 import React from "react";
 // import Loader from "../../Loader";
-
+import classes from "./Button.module.css";
 const AnimatedButton = ({ children, isLoading, ...props }) => {
   return (
-    <button
-      className="btn  disabled:bg-gray-500 disabled:cursor-not-allowed"
+    // <button
+    //   className="btn  disabled:bg-gray-500 disabled:cursor-not-allowed"
+    //   {...props}
+    // >
+    //   {isLoading ? (
+    //     <Loader color="gray" size="sm" />
+    //   ) : (
+    //     <div className="flex gap-1">
+    //       {props?.icon ? <>{props?.icon}</> : null}
+
+    //       <span className="text">{children}</span>
+    //     </div>
+    //   )}
+    // </button>
+    <Button
+      variant="gradient"
+      gradient={{ from: "pink", to: "yellow" }}
+      // size="xl"
+      className={classes.control}
+      // mt={10}
+      
+      loading={isLoading}
       {...props}
     >
-      {isLoading ? (
-        <Loader color="gray" size="sm" />
-      ) : (
-        <div className="flex gap-1">
-          {props?.icon ? <>{props?.icon}</> : null}
-
-          <span className="text">{children}</span>
-        </div>
-      )}
-    </button>
+      {/* {children} */}
+      GET LINK
+    </Button>
   );
 };
 

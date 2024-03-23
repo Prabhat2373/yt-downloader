@@ -66,7 +66,7 @@
     flex-direction: column;
   }
 }
-
+/* 
 .control {
   &:not(:first-of-type) {
     margin-left: var(--mantine-spacing-md);
@@ -77,6 +77,25 @@
     font-size: var(--mantine-font-size-md);
 
     &:not(:first-of-type) {
+      margin-top: var(--mantine-spacing-md);
+      margin-left: 0;
+    }
+  }
+}
+ */
+
+.control {
+  /* Remove the nested selector or apply it within a local class or ID */
+  /* &:not(:first-of-type) {
+    margin-left: var(--mantine-spacing-md);
+  } */
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    height: rem(42px);
+    font-size: var(--mantine-font-size-md);
+
+    /* Apply the nested selector within a local class or ID */
+    &.nested-class:not(:first-of-type) {
       margin-top: var(--mantine-spacing-md);
       margin-left: 0;
     }
