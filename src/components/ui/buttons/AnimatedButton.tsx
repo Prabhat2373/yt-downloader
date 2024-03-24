@@ -47,10 +47,11 @@ const AnimatedButton = ({ children, isLoading, ...props }) => {
     // </button>
     <Button
       variant="gradient"
-      gradient={{ from: "pink", to: "yellow" }}
+      gradient={{ from: "#ee2a7b", to: "#6228d7" }}
       // size="xl"
       className={classes.control}
       // mt={10}
+      radius={'md'}
 
       loading={isLoading}
       {...props}

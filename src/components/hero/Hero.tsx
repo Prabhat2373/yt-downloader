@@ -62,6 +62,7 @@ import { Title, Text, Button, Container } from "@mantine/core";
 // import { Dots } from "./Dots";
 import classes from "./Hero.module.css";
 import { Dots } from "../ui/Dots";
+import BgGrid from "./BgGrid";
 
 function Hero({ children }) {
   return (
@@ -71,6 +72,7 @@ function Hero({ children }) {
       <Dots className={classes.dots} style={{ left: 0, top: 140 }} />
       <Dots className={classes.dots} style={{ right: 0, top: 60 }} />
 
+      {/* <BgGrid /> */}
       <div className={classes.inner}>
         <Title className={classes.title}>
           Empower Your Media Journey <br /> Download{" "}
