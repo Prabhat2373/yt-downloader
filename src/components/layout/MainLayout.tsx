@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "./partials/Footer";
 import Header from "./partials/Header";
+import { Analytics } from "@vercel/analytics/react";
 import { createTheme, MantineProvider, rem, Container } from "@mantine/core";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -36,6 +37,7 @@ const theme = createTheme({
 const MainLayout = ({ children }) => {
   return (
     <>
+      <Analytics />
       <MantineProvider
         withCssVariables={true}
         withGlobalStyles={true}
