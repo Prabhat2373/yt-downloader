@@ -4,17 +4,25 @@ import {
   IconBadge4kFilled,
   IconBadge8k,
   IconBadge8kFilled,
+  IconBrandYoutube,
+  IconCircleArrowDownFilled,
   IconDownload,
   IconDownloadOff,
+  IconSquareRoundedArrowDown,
+  IconSquareRoundedArrowDownFilled,
   IconVolume3,
 } from "@tabler/icons-react";
 import { useState } from "react";
 import Icon4k from "../../icon/Icon4k";
 import AnimatedButton from "../buttons/AnimatedButton";
-import { Text, Title } from "@mantine/core";
+import { Flex, Text, Title } from "@mantine/core";
+import { useColorScheme } from "@mantine/hooks";
 
 const DownloadLinkCard = ({ format, videoUrl }) => {
   const [isDownloading, setIsDownloading] = useState(false);
+
+  const theme = useColorScheme();
+  console.log("theme", theme);
 
   // async function downloadVideo(format: string) {
   //   setIsDownloading(true);
@@ -72,7 +80,7 @@ const DownloadLinkCard = ({ format, videoUrl }) => {
     const height = format?.height;
     console.log("height", height, resolution);
 
-    if (height >= 2160) {
+    if (height > 2160) {
       return "8K";
     } else if (height >= 1080) {
       return "4K";
@@ -89,13 +97,16 @@ const DownloadLinkCard = ({ format, videoUrl }) => {
   return (
     <div key={format?.itag} className="download_card">
       <div>
-        <Title size={"h4"} className="font-bold flex gap-1">
-          <div className="flex gap-1">
-            {format?.qualityLabel}{" "}
+        <Title size={"h4"} className="font-bold flex gap-2">
+          <div className="flex gap-2">
+            <Flex gap={3}>
+              <IconBrandYoutube />
+              {format?.qualityLabel}{" "}
+            </Flex>
             {checkResolution() === "4K" ? (
-              <IconBadge4k />
+              <IconBadge4kFilled />
             ) : checkResolution() === "8K" ? (
-              <IconBadge8k />
+              <IconBadge8kFilled />
             ) : null}
             {/* {!format?.hasAudio ? } */}
             {!format?.hasAudio ? (
@@ -125,9 +136,10 @@ const DownloadLinkCard = ({ format, videoUrl }) => {
           onClick={() => downloadVideo(format?.itag)}
           // className="bg-green-500 text-white px-4 py-2 rounded-md mt-2"
         >
-          {/* {isDownloading ? <Loader /> : "Download"} */}
-          <IconDownload />
-          Download
+          <Flex align={"center"} gap={3}>
+            <Text fw={"bold"}>Download</Text>
+            <IconCircleArrowDownFilled />
+          </Flex>
         </AnimatedButton>
       </div>
     </div>

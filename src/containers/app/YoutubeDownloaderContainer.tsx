@@ -15,6 +15,8 @@ import AudioDownloadCard from "@/components/ui/cards/AudioDownloadCard";
 import { toast } from "react-toastify";
 import TabsComponent from "@/components/ui/tabs/Tabs";
 import { convertSecondsToMinutes } from "@/utils/utils";
+import { IconBolt } from "@tabler/icons-react";
+import IconPower from "@/components/icon/IconPower";
 
 export default function YoutubeDownloaderContainer() {
   // const [formats,setFormats]
@@ -67,7 +69,7 @@ export default function YoutubeDownloaderContainer() {
             {/* <Grid columns={4} align="center" content="center"> */}
             <Grid grow gutter="xs" columns={12} align="center">
               {/* <Grid.Col span={{ base: 3, sm: 3, lg: 3 }}> */}
-              <Grid.Col span={8}>
+              <Grid.Col span={9}>
                 <div className="">
                   {/* <div className="flex items-center   w-full  gap-2 rounded-2xl "> */}
                   <div className="">
@@ -93,22 +95,26 @@ export default function YoutubeDownloaderContainer() {
               </Grid.Col>
 
               {/* <Grid.Col span={{ base: 2, sm: 1, lg: 1 }}> */}
-              <Grid.Col span={4}>
+              <Grid.Col span={3}>
                 <AnimatedButton
-                  icon={<IconStars />}
+                  // icon={<IconStars />}
+
+                  radius="lg"
                   onClick={fetchFormats}
                   disabled={!videoUrl || isLoading}
                   isLoading={isLoading}
-                  size="md"
+                  size="lg"
                 >
                   GET LINK
+                  <IconPower />
                 </AnimatedButton>
               </Grid.Col>
             </Grid>
           </div>
         </div>
-        {meta?.title?<div className="thumbnail_container">
-          {/* <Image
+        {meta?.title ? (
+          <div className="thumbnail_container">
+            {/* <Image
             radius="md"
             src={
               meta?.thumbnails?.[meta?.thumbnails?.length - 1]?.url ??
@@ -117,33 +123,34 @@ export default function YoutubeDownloaderContainer() {
           />
           <Text>{meta?.title ?? "-"}</Text> */}
 
-          <Card shadow="sm" padding="lg" radius="md" withBorder w={400}>
-            <Card.Section>
-              <Image
-                // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                src={
-                  meta?.thumbnails?.[meta?.thumbnails?.length - 1]?.url ??
-                  "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
-                }
-                // height={160}
-                alt="Norway"
-              />
-            </Card.Section>
-            <Badge
-              pos={"absolute"}
-              right={2}
-              bottom={88}
-              radius="md"
-              color="black"
-            >
-              {convertSecondsToMinutes(meta?.lengthSeconds)}
-            </Badge>
+            <Card shadow="sm" padding="lg" radius="md" withBorder w={400}>
+              <Card.Section>
+                <Image
+                  // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                  src={
+                    meta?.thumbnails?.[meta?.thumbnails?.length - 1]?.url ??
+                    "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+                  }
+                  // height={160}
+                  alt="Norway"
+                />
+              </Card.Section>
+              <Badge
+                pos={"absolute"}
+                right={2}
+                bottom={88}
+                radius="md"
+                color="black"
+              >
+                {convertSecondsToMinutes(meta?.lengthSeconds)}
+              </Badge>
 
-            <Text size="sm" c="dimmed">
-              {meta?.title ?? "-"} 
-            </Text>
-          </Card>
-        </div>:null}
+              <Text size="sm" c="dimmed">
+                {meta?.title ?? "-"}
+              </Text>
+            </Card>
+          </div>
+        ) : null}
         {videoFormats?.length || audioFormats?.length ? (
           <div className="flex justify-center w-full tab-container">
             <TabsComponent active={active} setActive={setActive} />

@@ -1,6 +1,13 @@
 import { formatString, getDuration } from "@/utils/utils";
-import { Text, Title } from "@mantine/core";
-import { IconBadge4k, IconBadge8k, IconDownload } from "@tabler/icons-react";
+import { Flex, Text, Title } from "@mantine/core";
+import {
+  IconBadge4k,
+  IconBadge8k,
+  IconCircleArrowDownFilled,
+  IconDownload,
+  IconMusic,
+  IconSquareRoundedArrowDown,
+} from "@tabler/icons-react";
 import { useState } from "react";
 import AnimatedButton from "../buttons/AnimatedButton";
 
@@ -80,13 +87,15 @@ const AudioDownloadCard = ({ format }) => {
   return (
     <div key={format?.itag} className="download_card">
       <div>
-        <Title size={"h4"} className="font-bold flex gap-1">
-          {format?.audioBitrate}KBPS
-        </Title>
+        <Flex gap={3} align="center">
+          <IconMusic />
+          <Title size={"h4"} className="font-bold flex gap-1">
+            {format?.audioBitrate}KBPS
+          </Title>
+        </Flex>
         <Text>{format?.fps}</Text>
         <Text>
           Duration : {getDuration(Number(format?.approxDurationMs) || 0)}{" "}
-          Minutes
         </Text>
       </div>
       <div>
@@ -98,8 +107,10 @@ const AudioDownloadCard = ({ format }) => {
           // className="bg-green-500 text-white px-4 py-2 rounded-md mt-2"
         >
           {/* {isDownloading ? <Loader /> : "Download"} */}
-          <IconDownload />
-          Download!
+          <Flex align={"center"} gap={3}>
+            <Text fw={"bold"}>Download</Text>
+            <IconCircleArrowDownFilled />
+          </Flex>
         </AnimatedButton>
       </div>
     </div>
