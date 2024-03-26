@@ -36,6 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="canonical" href="https://www.fast4k.com/" />
       <ColorSchemeScript />
       <body className={inter.className}>
         <MainLayout>{children}</MainLayout>
