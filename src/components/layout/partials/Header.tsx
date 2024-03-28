@@ -1,10 +1,11 @@
 "use client";
 import { useState } from "react";
-import { Container, Group, Burger } from "@mantine/core";
+import { Container, Group, Burger, Text, Flex } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { MantineLogo } from "@mantinex/mantine-logo";
 import classes from "./Header.module.css";
 import ThemeButton from "@/components/ui/ThemeButton";
+import Image from "next/image";
 
 const links = [
   { link: "/about", label: "Features" },
@@ -35,7 +36,13 @@ function Header() {
   return (
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
-        <MantineLogo size={28} />
+        {/* <MantineLogo size={28} vAlphabetic={"Fast4k"} /> */}
+        <Flex align={"center"} gap={8}>
+          <Image src="/app_logo.png" alt="App Logo" width={45} height={45} />
+          <Text fw={"800"} fs={"100"}>
+            Fast4K
+          </Text>
+        </Flex>
         {/* <Group gap={5} visibleFrom="xs">
           {items}
         </Group> */}

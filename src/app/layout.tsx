@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     "Youtube Video Downloader 4k",
     "youtube audio downloader",
     "youtube 4k downloader ",
+    "download youtube video",
+    "youtube download",
+    "fast 4k",
+    "4k",
+    "youtube video",
+    "youtube video download",
   ],
   twitter: {
     card: "summary_large_image",
