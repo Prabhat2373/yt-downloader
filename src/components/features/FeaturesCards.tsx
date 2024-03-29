@@ -17,19 +17,19 @@ const mockdata = [
   {
     title: "Extreme performance",
     description:
-      "This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit",
+      "Experience unparalleled speed and efficiency with our platform's cutting-edge technology, ensuring swift downloads of your favorite content without compromise.",
     icon: IconGauge,
   },
   {
     title: "Privacy focused",
     description:
-      "People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma",
+      "Protecting your privacy is our commitment. Benefit from our robust encryption and secure servers, guaranteeing that your personal data remains confidential throughout your downloading experience.",
     icon: IconUser,
   },
   {
     title: "No third parties",
     description:
-      "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves",
+      "Download with confidence: secure, direct, and hassle-free. Your privacy is paramount, and our transparent, reliable process ensures peace of mind.",
     icon: IconCookie,
   },
 ];

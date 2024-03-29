@@ -7,12 +7,14 @@ import {
 import { MantineLogo } from "@mantinex/mantine-logo";
 import classes from "./Footer.module.css";
 import Link from "next/link";
+import Logo from "@/components/app/Logo";
 
 function Footer() {
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>
-        <MantineLogo size={28} />
+        {/* <MantineLogo size={28}  /> */}
+        <Logo />
         <Group
           gap={0}
           className={classes.links}
@@ -38,16 +40,13 @@ function Footer() {
               />
             </ActionIcon>
           </Link>
-          <Link
-            href="https://www.instagram.com/_prabhat_10/"
-            target="_blank"
-          >
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandInstagram
-              style={{ width: rem(18), height: rem(18) }}
-              stroke={1.5}
-            />
-          </ActionIcon>
+          <Link href="https://www.instagram.com/_prabhat_10/" target="_blank">
+            <ActionIcon size="lg" color="gray" variant="subtle">
+              <IconBrandInstagram
+                style={{ width: rem(18), height: rem(18) }}
+                stroke={1.5}
+              />
+            </ActionIcon>
           </Link>
         </Group>
       </Container>
