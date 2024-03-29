@@ -25,9 +25,8 @@ export default function YoutubeDownloaderContainer() {
   const [videoFormats, setVideoFormats] = useState([]);
   const [audioFormats, setAudioFormats] = useState([]);
   const [meta, setMeta] = useState({});
-  const [videoUrl, setVideoUrl] = useState(
-    "https://youtu.be/hwNWx1GTSKo?si=PG_P_Zv73RyE0Wkt"
-  );
+  const [videoUrl, setVideoUrl] = useState("");
+  // "https://youtu.be/hwNWx1GTSKo?si=PG_P_Zv73RyE0Wkt"
 
   const fetchFormats = async () => {
     try {
