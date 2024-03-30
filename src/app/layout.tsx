@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "youtube video",
     "youtube video download",
   ],
+  
   twitter: {
     card: "summary_large_image",
     title: "Next.js",
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
 
     url: "https://www.fast4k.com/",
     siteName: "Fast4k",
+  
     // images: [
     //   {
     //     url: "https://nextjs.org/og.png", // Must be an absolute URL

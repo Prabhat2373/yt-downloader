@@ -111,9 +111,11 @@ export default function YoutubeDownloaderContainer() {
             </Grid>
           </div>
         </div>
-        {meta?.title ? (
-          <div className="thumbnail_container">
-            {/* <Image
+        <Flex gap={20} mt={10} direction={"column"}>
+          <div>
+            {meta?.title ? (
+              <div className="thumbnail_container">
+                {/* <Image
             radius="md"
             src={
               meta?.thumbnails?.[meta?.thumbnails?.length - 1]?.url ??
@@ -122,128 +124,132 @@ export default function YoutubeDownloaderContainer() {
           />
           <Text>{meta?.title ?? "-"}</Text> */}
 
-            <Card shadow="sm" padding="lg" radius="md" withBorder w={400}>
-              <Card.Section>
-                <Image
-                  // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                  src={
-                    meta?.thumbnails?.[meta?.thumbnails?.length - 1]?.url ??
-                    "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
-                  }
-                  // height={160}
-                  alt="Norway"
-                />
-              </Card.Section>
-              <Badge
-                pos={"absolute"}
-                right={2}
-                bottom={88}
-                radius="md"
-                color="black"
-              >
-                {convertSecondsToMinutes(meta?.lengthSeconds)}
-              </Badge>
+                <Card shadow="sm" padding="lg" radius="md" withBorder w={400}>
+                  <Card.Section>
+                    <Image
+                      // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                      src={
+                        meta?.thumbnails?.[meta?.thumbnails?.length - 1]?.url ??
+                        "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+                      }
+                      // height={160}
+                      alt="Norway"
+                    />
+                  </Card.Section>
+                  <Badge
+                    pos={"absolute"}
+                    right={7}
+                    bottom={77}
+                    radius="md"
+                    color="black"
+                  >
+                    {convertSecondsToMinutes(meta?.lengthSeconds)}
+                  </Badge>
 
-              <Text size="sm" c="dimmed">
-                {meta?.title ?? "-"}
-              </Text>
-            </Card>
+                  <Text size="sm" mt={10} >
+                    {meta?.title ?? "-"}
+                  </Text>
+                </Card>
+              </div>
+            ) : null}
           </div>
-        ) : null}
-        {videoFormats?.length || audioFormats?.length ? (
-          <div className="flex justify-center w-full tab-container">
-            <TabsComponent active={active} setActive={setActive} />
-          </div>
-        ) : null}
+          <div style={{ width: "100%" }}>
+            {videoFormats?.length || audioFormats?.length ? (
+              <div className="flex justify-center w-full tab-container">
+                <TabsComponent active={active} setActive={setActive} />
+              </div>
+            ) : null}
 
-        <div className="download_card_container">
-          {videoFormats?.length && active == "video" ? (
-            <>
-              {/* <div className="text-center w-full">
+            <div className="download_card_container">
+              {videoFormats?.length && active == "video" ? (
+                <>
+                  {/* <div className="text-center w-full">
                 <Title size={"xl"}>Video Formats</Title>
                 <hr className="w-full" style={{ opacity: "60%" }} />
               </div> */}
-              {videoFormats
-                .sort((a, b) => {
-                  console.log("first", a);
-                  console.log("second", b);
-                  // Case 1: Both true
-                  if (
-                    a?.hasAudio &&
-                    a?.hasVideo &&
-                    !b?.hasAudio &&
-                    !b?.hasVideo
-                  ) {
-                    return -1; // a should come before b
-                  }
-                  if (
-                    !a?.hasAudio &&
-                    !a?.hasVideo &&
-                    b?.hasAudio &&
-                    b?.hasVideo
-                  ) {
-                    return 1; // b should come before a
-                  }
+                  {videoFormats
+                    .sort((a, b) => {
+                      console.log("first", a);
+                      console.log("second", b);
+                      // Case 1: Both true
+                      if (
+                        a?.hasAudio &&
+                        a?.hasVideo &&
+                        !b?.hasAudio &&
+                        !b?.hasVideo
+                      ) {
+                        return -1; // a should come before b
+                      }
+                      if (
+                        !a?.hasAudio &&
+                        !a?.hasVideo &&
+                        b?.hasAudio &&
+                        b?.hasVideo
+                      ) {
+                        return 1; // b should come before a
+                      }
 
-                  // Case 2: Only one true for 'a'
-                  if (
-                    a?.hasAudio ||
-                    (a?.hasVideo && !(b?.hasAudio || b?.hasVideo))
-                  ) {
-                    return -1; // a should come before b
-                  }
-                  if (
-                    (!(a?.hasAudio || a?.hasVideo) && b?.hasAudio) ||
-                    b?.hasVideo
-                  ) {
-                    return 1; // b should come before a
-                  }
+                      // Case 2: Only one true for 'a'
+                      if (
+                        a?.hasAudio ||
+                        (a?.hasVideo && !(b?.hasAudio || b?.hasVideo))
+                      ) {
+                        return -1; // a should come before b
+                      }
+                      if (
+                        (!(a?.hasAudio || a?.hasVideo) && b?.hasAudio) ||
+                        b?.hasVideo
+                      ) {
+                        return 1; // b should come before a
+                      }
 
-                  // Case 3: No other differences
-                  return 0; // Leave order unchanged
-                })
-                ?.filter(
-                  (fmt) =>
-                    fmt?.qualityLabel !== null &&
-                    //   fmt?.hasVideo &&
-                    //   fmt?.hasAudio &&
-                    fmt?.container === "mp4"
-                )
-                ?.map((format) => {
-                  return (
-                    <DownloadLinkCard
-                      format={format}
-                      videoUrl={videoUrl}
-                      key={format?.itag}
-                    />
-                  );
-                })}
-            </>
-          ) : null}
-          {/* <hr className="w-full" style={{opacity:'60%'}} /> */}
-          {audioFormats?.length && active == "audio" ? (
-            <>
-              {/* <div className="text-center w-full">
+                      // Case 3: No other differences
+                      return 0; // Leave order unchanged
+                    })
+                    ?.filter(
+                      (fmt) =>
+                        fmt?.qualityLabel !== null &&
+                        //   fmt?.hasVideo &&
+                        //   fmt?.hasAudio &&
+                        fmt?.container === "mp4"
+                    )
+                    ?.map((format) => {
+                      return (
+                        <DownloadLinkCard
+                          format={format}
+                          videoUrl={videoUrl}
+                          key={format?.itag}
+                        />
+                      );
+                    })}
+                </>
+              ) : null}
+              {/* <hr className="w-full" style={{opacity:'60%'}} /> */}
+              {audioFormats?.length && active == "audio" ? (
+                <>
+                  {/* <div className="text-center w-full">
                 <Title size={"xl"}>Audio Formats</Title>
                 <hr className="w-full" style={{ opacity: "60%" }} />
               </div> */}
-              {audioFormats
-                ?.filter(
-                  (fmt) => fmt?.hasAudio
-                  // fmt?.mimeType?.startsWith("audio/")
-                )
-                ?.map((format) => {
-                  return (
-                    <AudioDownloadCard
-                      format={format}
-                      videoUrl={videoUrl}
-                      key={format?.itag}
-                    />
-                  );
-                })}
-            </>
-          ) : null}
-        </div>
+                  {audioFormats
+                    ?.filter(
+                      (fmt) => fmt?.hasAudio
+                      // fmt?.mimeType?.startsWith("audio/")
+                    )
+                    ?.map((format) => {
+                      return (
+                        <AudioDownloadCard
+                          format={format}
+                          videoUrl={videoUrl}
+                          key={format?.itag}
+                        />
+                      );
+                    })}
+                </>
+              ) : null}
+            </div>
+          </div>
+        </Flex>
       </Hero>
     </>
   );
