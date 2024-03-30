@@ -24,6 +24,46 @@ export const metadata: Metadata = {
     "4k",
     "youtube video",
     "youtube video download",
+    "fast4k",
+    "fast 4k",
+    "video",
+    "youtube",
+    "online video download",
+    "youtube video downloader mp3 online",
+    "all video downloader",
+    "youtube downloader 2024",
+    "download youtube",
+    "fast4k",
+    "Fast4k",
+    "fast",
+    "full hd",
+    "full hd youtube video download",
+    "youtube download",
+    "download youtube video",
+    "without ads youtube video download",
+    "clean youtube downloader",
+    "video downloader online",
+    "online video downloader",
+    "youtube video downloader online",
+    "online youtube downloader",
+    "video downloader",
+    "youtube online",
+    "online youtube downloader 4k",
+    "youtube video download online hd",
+    "hd youtube video downlaod online",
+    "hd youtube video downlaod",
+    "4k youtube video download",
+    "youtube mp3 download",
+    "youtube audio download online",
+    "audio download online",
+    "youtube mp3 download online",
+    "online mp3 download",
+    "online audio downloader",
+    "download youtube audio",
+    "youtube audio downloader online",
+    "online audio downloader youtube",
+    "fast",
+    "audio downloader",
   ],
 
   twitter: {
@@ -106,7 +146,6 @@ export default function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <ColorSchemeScript />
       <body className={inter.className}>
-        
         <MainLayout>{children}</MainLayout>
       </body>
     </html>
