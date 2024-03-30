@@ -9,7 +9,7 @@ import MainLayout from "@/components/layout/MainLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "High-Quality YouTube Videos & Audio Downloads | Fast4k",
+  title: "Fast4k | High-Quality YouTube Videos & Audio Downloads ",
   description:
     "Discover Fast4k: Your ultimate destination for high-quality YouTube video and audio downloads. Fast, reliable, and hassle-free. Explore now!",
   applicationName: "Fast4k",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "youtube video",
     "youtube video download",
   ],
-  
+
   twitter: {
     card: "summary_large_image",
     title: "Next.js",
@@ -43,6 +43,28 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon_io/favicon-32x32.png",
+    shortcut: "/favicon_io/favicon-32x32.png",
+    apple: "/favicon_io//apple-touch-icon.png",
+    other: {
+      rel: "/favicon_io//apple-touch-icon.png",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
   openGraph: {
     title: "Fast4k | Download High-Quality YouTube Videos & Audio ",
 
@@ -51,7 +73,7 @@ export const metadata: Metadata = {
 
     url: "https://www.fast4k.com/",
     siteName: "Fast4k",
-  
+
     // images: [
     //   {
     //     url: "https://nextjs.org/og.png", // Must be an absolute URL
@@ -79,6 +101,9 @@ export default function RootLayout({
     <html lang="en">
       <link rel="canonical" href="https://www.fast4k.com/" />
       <link rel="icon" href="/favicon.ico" />
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+      {/* <meta charset="utf-8" /> */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <ColorSchemeScript />
       <body className={inter.className}>
         <MainLayout>{children}</MainLayout>
