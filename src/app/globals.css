@@ -366,3 +366,52 @@
 a {
   text-decoration: none;
 }
+
+.app_bg_texture {
+  /* background-color: #e5e5f7;
+  opacity: 0.2;
+  background-image:  linear-gradient(#000000 1.1px, transparent 1.1px), linear-gradient(to right, #000000 1.1px, #e5e5f7 1.1px);
+  background-size: 22px 22px; */
+
+  background-color: #e5e5f7;
+  opacity: 1;
+  /* background-image: linear-gradient(
+      #000000 2.4000000000000004px,
+      transparent 2.4000000000000004px
+    ),
+    linear-gradient(
+      to right,
+      #000000 2.4000000000000004px,
+      #e5e5f7 2.4000000000000004px
+    ); */
+  background: url("/bg-honeycomb.svg") no-repeat;
+  /* background-size: 48px 48px; */
+  background-size: 1048px 449px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.app_background {
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  opacity: 0.5;
+  /* background: rgb(229, 229, 247); */
+}
+
+/* .box_grid_pattern {
+  background-image: linear-gradient(
+      #000000 2.4000000000000004px,
+      transparent 2.4000000000000004px
+    ),
+    linear-gradient(
+      to right,
+      #000000 2.4000000000000004px,
+      #e5e5f7 2.4000000000000004px
+    );
+} */

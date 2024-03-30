@@ -7,6 +7,8 @@ import { createTheme, MantineProvider, rem, Container } from "@mantine/core";
 
 import "react-toastify/dist/ReactToastify.css";
 import { Bounce, ToastContainer } from "react-toastify";
+import Image from "next/image";
+// import bg from '../'
 
 const CONTAINER_SIZES: Record<string, string> = {
   xxs: rem(300),
@@ -48,6 +50,10 @@ const MainLayout = ({ children }) => {
       >
         <>
           <Header />
+          {/* <Image src={}/>  */}
+          <div className="app_background ">
+            <div className="app_bg_texture"></div>
+          </div>
           <div
             style={{
               minHeight: "100vh",

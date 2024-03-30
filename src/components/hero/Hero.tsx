@@ -115,7 +115,7 @@ function Hero({ children }) {
           <div className="square"></div>
           <div className="square"></div>
         </div> */}
-        <div className="hero_content_container">
+        <div className="hero_content_container box_grid_pattern">
           {/* <Container mt={20} size={"xl"}> */}
           {children}
           {/* </Container> */}
