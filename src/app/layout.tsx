@@ -64,6 +64,7 @@ export const metadata: Metadata = {
     "online audio downloader youtube",
     "fast",
     "audio downloader",
+    "fast4k.com",
   ],
 
   twitter: {
@@ -145,6 +146,16 @@ export default function RootLayout({
       {/* <meta charset="utf-8" /> */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <ColorSchemeScript />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
+        crossOrigin="anonymous"
+      ></script>
+      {/* <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
+        crossOrigin="anonymous"
+      ></script> */}
       <body className={inter.className}>
         <MainLayout>{children}</MainLayout>
       </body>
