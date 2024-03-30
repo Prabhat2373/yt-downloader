@@ -9,9 +9,9 @@ import MainLayout from "@/components/layout/MainLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fast4k | Download High-Quality YouTube Videos & Audio ",
+  title: "High-Quality YouTube Videos & Audio Downloads | Fast4k",
   description:
-    "Discover the ultimate destination for high-quality YouTube video and audio downloads. Fast4k offers a seamless experience to access your favorite content in pristine quality. With our user-friendly interface, you can effortlessly download videos and audio tracks, ensuring a premium viewing and listening experience anytime, anywhere. Explore now and elevate your entertainment with our wide selection of content. Fast, reliable, and hassle-free downloads await you. Start downloading today!",
+    "Discover Fast4k: Your ultimate destination for high-quality YouTube video and audio downloads. Fast, reliable, and hassle-free. Explore now!",
   applicationName: "Fast4k",
   referrer: "origin-when-cross-origin",
   keywords: [
