@@ -99,7 +99,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon_io/favicon-32x32.png",
-    shortcut: "/favicon_io/favicon-32x32.png",
+    shortcut: "/favicon_io/favicon-16x16.png",
     apple: "/favicon_io//apple-touch-icon.png",
     other: {
       rel: "/favicon_io//apple-touch-icon.png",
@@ -141,8 +141,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="canonical" href="https://www.fast4k.com/" />
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+      {/* <link rel="icon" href="/favicon.ico" /> */}
+      <link rel="icon" href="/favicon_io/favicon-16x16.png" />
+      {/* <link rel="icon" href="/favicon.ico" /> */}
+
+      <link
+        rel="shortcut icon"
+        type="image/x-icon"
+        href="/favicon_io/favicon-16x16.png"
+      />
       {/* <meta charset="utf-8" /> */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <ColorSchemeScript />
