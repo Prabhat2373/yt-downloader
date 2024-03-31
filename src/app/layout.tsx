@@ -113,7 +113,7 @@ export const metadata: Metadata = {
       "Discover the ultimate destination for high-quality YouTube video and audio downloads. Fast4k offers a seamless experience to access your favorite content in pristine quality. With our user-friendly interface, you can effortlessly download videos and audio tracks, ensuring a premium viewing and listening experience anytime, anywhere. Explore now and elevate your entertainment with our wide selection of content. Fast, reliable, and hassle-free downloads await you. Start downloading today!",
 
     url: "https://www.fast4k.com/",
-    siteName: "Fast4k",
+    siteName: "Fast 4k",
 
     // images: [
     //   {
@@ -144,7 +144,12 @@ export default function RootLayout({
       {/* <link rel="icon" href="/favicon.ico" /> */}
       <link rel="icon" href="/favicon_io/favicon-16x16.png" />
       {/* <link rel="icon" href="/favicon.ico" /> */}
-
+      <meta
+        property="og:title"
+        content="Fast4k | Download High-Quality YouTube Videos & Audio"
+      />
+      <meta property="og:site_name" content="Fast 4k" />
+      <meta itemProp="name" content="Fast4K" />
       <link
         rel="shortcut icon"
         type="image/x-icon"
