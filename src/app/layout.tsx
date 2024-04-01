@@ -157,6 +157,11 @@ export default function RootLayout({
       />
       {/* <meta charset="utf-8" /> */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script
+        src="https://assets.usestyle.ai/seonajsplugin"
+        defer
+        id="seona-js-plugin"
+      ></script>
       <ColorSchemeScript />
       <script
         async
