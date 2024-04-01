@@ -65,6 +65,12 @@ export const metadata: Metadata = {
     "fast",
     "audio downloader",
     "fast4k.com",
+    "youtube to mp4",
+    "youtube audio downloader",
+    "hd youtube converter",
+    "youtube audio high-quality",
+    "full hd downloader	",
+    "ultra hd download",
   ],
 
   twitter: {
@@ -155,6 +161,11 @@ export default function RootLayout({
         type="image/x-icon"
         href="/favicon_io/favicon-16x16.png"
       />
+      <meta
+        property="og:image"
+        content="https://www.fast4k.com/_next/image?url=%2Fapp_logo.png&w=96&q=75"
+      />
+      <meta property="og:type" content="website" />
       {/* <meta charset="utf-8" /> */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <script

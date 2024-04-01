@@ -95,31 +95,9 @@ function Hero({ children }) {
             just one click. Elevate your media experience today!
           </Text>
         </Container>
-        {/* <div className="checkerboard"></div> */}
-        {/* <div className="grid">
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-        </div> */}
+
         <div className="hero_content_container box_grid_pattern">
-          {/* <Container mt={20} size={"xl"}> */}
           {children}
-          {/* </Container> */}
-          {/* <div className="hero-pattern "></div> */}
         </div>
         {/* <div
           style={{

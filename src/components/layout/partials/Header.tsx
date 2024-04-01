@@ -48,6 +48,7 @@ function Header() {
       <Container size="xl" className={classes.inner}>
         {/* <MantineLogo size={28} vAlphabetic={"Fast4k"} /> */}
         <Link
+          title="Fast 4K"
           href={"/"}
           style={{ color: `${colorScheme === "dark" ? "white" : "black"}` }}
         >
