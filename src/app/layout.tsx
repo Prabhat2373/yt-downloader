@@ -69,8 +69,14 @@ export const metadata: Metadata = {
     "youtube audio downloader",
     "hd youtube converter",
     "youtube audio high-quality",
-    "full hd downloader	",
+    "full hd downloader",
     "ultra hd download",
+    "youtube audio save",
+    "fast download server",
+    "quick youtube to mp3",
+    "high-definition youtube",
+    "quality video download",
+    "mp4 high-quality",
   ],
 
   twitter: {
