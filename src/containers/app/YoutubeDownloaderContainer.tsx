@@ -1,22 +1,17 @@
 "use client";
 
-import Loader from "@/components/Loader";
-import DownloadLinkCard from "@/components/ui/cards/DownloadLinkCard";
 import Hero from "@/components/hero/Hero";
-import Icon4k from "@/components/icon/Icon4k";
-import IconLink from "@/components/icon/IconLink";
 import AnimatedButton from "@/components/ui/buttons/AnimatedButton";
+import DownloadLinkCard from "@/components/ui/cards/DownloadLinkCard";
 // import Image from "next/image";
-import { useEffect, useState } from "react";
-import IconStars from "@/components/icon/IconStars";
-import { UrlInput } from "@/components/ui/UrlInput";
-import { Badge, Card, Flex, Grid, Image, Text, Title } from "@mantine/core";
-import AudioDownloadCard from "@/components/ui/cards/AudioDownloadCard";
-import { toast } from "react-toastify";
-import TabsComponent from "@/components/ui/tabs/Tabs";
-import { convertSecondsToMinutes } from "@/utils/utils";
-import { IconBolt } from "@tabler/icons-react";
 import IconPower from "@/components/icon/IconPower";
+import AudioDownloadCard from "@/components/ui/cards/AudioDownloadCard";
+import TabsComponent from "@/components/ui/tabs/Tabs";
+import { UrlInput } from "@/components/ui/UrlInput";
+import { convertSecondsToMinutes } from "@/utils/utils";
+import { Badge, Card, Flex, Grid, Image, Text } from "@mantine/core";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function YoutubeDownloaderContainer() {
   // const [formats,setFormats]
@@ -72,19 +67,10 @@ export default function YoutubeDownloaderContainer() {
                 <div className="">
                   {/* <div className="flex items-center   w-full  gap-2 rounded-2xl "> */}
                   <div className="">
-                    {/* <input
-                type="url"
-                onChange={(e) => setVideoUrl(e?.target?.value)}
-                className="w-full  rounded-3xl outline-none py-3"
-                placeholder="Paste Youtube Video URL.."
-              /> */}
                     <UrlInput
-                      // style={{
-                      //   paddingTop: "20px",
-                      //   paddingBottom: "20px",
-                      // }}
                       value={videoUrl}
                       type="url"
+                      title="Enter Youtube URL"
                       onChange={(e) => setVideoUrl(e?.target?.value)}
                       className="w-full  rounded-3xl outline-none py-3"
                       placeholder="Paste Youtube Video URL.."
@@ -103,6 +89,7 @@ export default function YoutubeDownloaderContainer() {
                   disabled={!videoUrl || isLoading}
                   isLoading={isLoading}
                   size="lg"
+                  title="Get Download Link"
                 >
                   GET LINK
                   <IconPower />
@@ -133,7 +120,7 @@ export default function YoutubeDownloaderContainer() {
                         "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
                       }
                       // height={160}
-                      alt="Norway"
+                      alt="Youtube video thumbnail"
                     />
                   </Card.Section>
                   <Badge
@@ -146,7 +133,7 @@ export default function YoutubeDownloaderContainer() {
                     {convertSecondsToMinutes(meta?.lengthSeconds)}
                   </Badge>
 
-                  <Text size="sm" mt={10} >
+                  <Text size="sm" mt={10}>
                     {meta?.title ?? "-"}
                   </Text>
                 </Card>
@@ -163,10 +150,6 @@ export default function YoutubeDownloaderContainer() {
             <div className="download_card_container">
               {videoFormats?.length && active == "video" ? (
                 <>
-                  {/* <div className="text-center w-full">
-                <Title size={"xl"}>Video Formats</Title>
-                <hr className="w-full" style={{ opacity: "60%" }} />
-              </div> */}
                   {videoFormats
                     .sort((a, b) => {
                       console.log("first", a);
@@ -208,10 +191,7 @@ export default function YoutubeDownloaderContainer() {
                     })
                     ?.filter(
                       (fmt) =>
-                        fmt?.qualityLabel !== null &&
-                        //   fmt?.hasVideo &&
-                        //   fmt?.hasAudio &&
-                        fmt?.container === "mp4"
+                        fmt?.qualityLabel !== null && fmt?.container === "mp4"
                     )
                     ?.map((format) => {
                       return (
@@ -224,18 +204,10 @@ export default function YoutubeDownloaderContainer() {
                     })}
                 </>
               ) : null}
-              {/* <hr className="w-full" style={{opacity:'60%'}} /> */}
               {audioFormats?.length && active == "audio" ? (
                 <>
-                  {/* <div className="text-center w-full">
-                <Title size={"xl"}>Audio Formats</Title>
-                <hr className="w-full" style={{ opacity: "60%" }} />
-              </div> */}
                   {audioFormats
-                    ?.filter(
-                      (fmt) => fmt?.hasAudio
-                      // fmt?.mimeType?.startsWith("audio/")
-                    )
+                    ?.filter((fmt) => fmt?.hasAudio)
                     ?.map((format) => {
                       return (
                         <AudioDownloadCard

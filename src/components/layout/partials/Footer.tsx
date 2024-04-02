@@ -21,7 +21,11 @@ function Footer() {
           justify="flex-end"
           wrap="nowrap"
         >
-          <Link href="https://twitter.com/code_prabhat" target="_blank">
+          <Link
+            href="https://twitter.com/code_prabhat"
+            title="Fast4k Twitter Handle"
+            target="_blank"
+          >
             <ActionIcon size="lg" color="gray" variant="subtle">
               <IconBrandTwitter
                 style={{ width: rem(18), height: rem(18) }}
@@ -32,6 +36,7 @@ function Footer() {
           <Link
             href="https://www.youtube.com/channel/UC-N0_T4Qf0rUYr4CK0PHkwA"
             target="_blank"
+            title="Fast4k youtube handle"
           >
             <ActionIcon size="lg" color="gray" variant="subtle">
               <IconBrandYoutube
@@ -40,7 +45,11 @@ function Footer() {
               />
             </ActionIcon>
           </Link>
-          <Link href="https://www.instagram.com/_prabhat_10/" target="_blank">
+          <Link
+            href="https://www.instagram.com/_prabhat_10/"
+            target="_blank"
+            title="fast4k instagram handle"
+          >
             <ActionIcon size="lg" color="gray" variant="subtle">
               <IconBrandInstagram
                 style={{ width: rem(18), height: rem(18) }}

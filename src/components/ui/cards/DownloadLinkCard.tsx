@@ -132,6 +132,7 @@ const DownloadLinkCard = ({ format, videoUrl }) => {
         <AnimatedButton
           icon={<IconDownload />}
           size="md"
+          title="download video"
           isLoading={isDownloading}
           onClick={() => downloadVideo(format?.itag)}
           // className="bg-green-500 text-white px-4 py-2 rounded-md mt-2"
