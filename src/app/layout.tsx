@@ -5,6 +5,7 @@ import "@mantine/core/styles.css";
 import { createTheme, MantineProvider, rem, Container } from "@mantine/core";
 import { ColorSchemeScript } from "@mantine/core";
 import MainLayout from "@/components/layout/MainLayout";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -152,56 +153,59 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="canonical" href="https://www.fast4k.com/" />
-      {/* <link rel="icon" href="/favicon.ico" /> */}
-      <link rel="icon" href="/favicon_io/favicon-16x16.png" />
-      {/* <link rel="icon" href="/favicon.ico" /> */}
-      <meta
-        property="og:title"
-        content="Fast4k | Download High-Quality YouTube Videos & Audio"
-      />
-      <meta property="og:site_name" content="Fast 4k" />
-      <meta itemProp="name" content="Fast4K" />
-      <link
-        rel="shortcut icon"
-        type="image/x-icon"
-        href="/favicon_io/favicon-16x16.png"
-      />
-      <meta
-        property="og:image"
-        content="https://www.fast4k.com/_next/image?url=%2Fapp_logo.png&w=96&q=75"
-      />
-      <meta property="og:type" content="website" />
-      {/* <meta charset="utf-8" /> */}
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <script
-        src="https://assets.usestyle.ai/seonajsplugin"
-        defer
-        id="seona-js-plugin"
-      ></script>
-      <ColorSchemeScript />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
-        crossOrigin="anonymous"
-      ></script>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "http://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Fast4k",
-          }),
-        }}
-      />
+      <Head>
+        <link rel="canonical" href="https://www.fast4k.com/" />
 
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon_io/favicon-16x16.png" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <meta
+          property="og:title"
+          content="Fast4k | Download High-Quality YouTube Videos & Audio"
+        />
+        <meta property="og:site_name" content="Fast 4k" />
+        <meta itemProp="name" content="Fast4K" />
+        <link
+          rel="shortcut icon"
+          type="image/x-icon"
+          href="/favicon_io/favicon-16x16.png"
+        />
+        <meta
+          property="og:image"
+          content="https://www.fast4k.com/_next/image?url=%2Fapp_logo.png&w=96&q=75"
+        />
+        <meta property="og:type" content="website" />
+        {/* <meta charset="utf-8" /> */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          src="https://assets.usestyle.ai/seonajsplugin"
+          defer
+          id="seona-js-plugin"
+        ></script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
+          crossOrigin="anonymous"
+        ></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Fast4k",
+            }),
+          }}
+        />
+      </Head>
       {/* <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
         crossOrigin="anonymous"
       ></script> */}
       <body className={inter.className}>
+        <ColorSchemeScript />
+
         <MainLayout>{children}</MainLayout>
       </body>
     </html>
