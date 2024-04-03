@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "Discover Fast4k: Your ultimate destination for high-quality YouTube video and audio downloads. Fast, reliable, and hassle-free. Explore now!",
   applicationName: "Fast4k",
+  manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",
   keywords: [
     "Youtube Video Downloader 4k",
