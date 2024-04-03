@@ -26,7 +26,7 @@ function Footer() {
             title="Fast4k Twitter Handle"
             target="_blank"
           >
-            <ActionIcon size="lg" color="gray" variant="subtle">
+            <ActionIcon title="twitter" size="lg" color="gray" variant="subtle">
               <IconBrandTwitter
                 style={{ width: rem(18), height: rem(18) }}
                 stroke={1.5}
@@ -38,7 +38,7 @@ function Footer() {
             target="_blank"
             title="Fast4k youtube handle"
           >
-            <ActionIcon size="lg" color="gray" variant="subtle">
+            <ActionIcon title="youtube" size="lg" color="gray" variant="subtle">
               <IconBrandYoutube
                 style={{ width: rem(18), height: rem(18) }}
                 stroke={1.5}
@@ -50,7 +50,12 @@ function Footer() {
             target="_blank"
             title="fast4k instagram handle"
           >
-            <ActionIcon size="lg" color="gray" variant="subtle">
+            <ActionIcon
+              title="instagram"
+              size="lg"
+              color="gray"
+              variant="subtle"
+            >
               <IconBrandInstagram
                 style={{ width: rem(18), height: rem(18) }}
                 stroke={1.5}

@@ -13,10 +13,10 @@ export function CardGradient({ data }) {
       >
         <data.icon style={{ width: rem(28), height: rem(28) }} stroke={1.5} />
       </ThemeIcon>
-      <Text size="xl" fw={500} mt="md">
+      <Text size="xl" fw={500} mt="md" title="feature ">
         {data?.title ?? "-"}
       </Text>
-      <Text size="sm" mt="sm" c="dimmed">
+      <Text size="sm" mt="sm" title="feature description">
         {data?.description ?? "-"}
       </Text>
     </Paper>
