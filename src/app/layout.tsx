@@ -79,6 +79,14 @@ export const metadata: Metadata = {
     "high-definition youtube",
     "quality video download",
     "mp4 high-quality",
+    "free youtube downloader",
+    "youtube video downloader ss",
+    "video downloader online free download from youtube",
+    "youtube videos downloader free download",
+    "youtube video downloader and converter free download",
+    "youtube download",
+    "download tube",
+    "fast4k",
   ],
 
   twitter: {
