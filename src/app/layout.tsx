@@ -140,6 +140,7 @@ export const metadata: Metadata = {
       url: "/apple-touch-icon-precomposed.png",
     },
   },
+  publisher: "Prabhat Tambe | Fast4k",
   openGraph: {
     title: "Fast4k | Download High-Quality YouTube Videos & Audio ",
 
