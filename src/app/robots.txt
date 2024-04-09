@@ -4,4 +4,4 @@ Disallow: /private/
 HTTP/1.1 200 OK
 
 
-Sitemap: /sitemap.xml
+Sitemap: https://www.fast4k.com/sitemap.xml
