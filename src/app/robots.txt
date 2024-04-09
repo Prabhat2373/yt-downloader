@@ -1,7 +1,6 @@
 User-Agent: *
 Allow: /
 Disallow: /private/
-HTTP/1.1 200 OK
 
 
 Sitemap: https://www.fast4k.com/sitemap.xml
