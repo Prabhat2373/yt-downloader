@@ -16,6 +16,17 @@ export const metadata: Metadata = {
   applicationName: "Fast4k",
   manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",
+  category: "entertainment",
+  alternates: {
+    canonical: "https://www.fast4k.com",
+
+    media: {
+      "only screen and (max-width: 600px)": "https://www.fast4k.com/",
+    },
+    types: {
+      "application/rss+xml": "https://www.fast4k.com",
+    },
+  },
   keywords: [
     "Youtube Video Downloader 4k",
     "youtube audio downloader",
@@ -107,18 +118,19 @@ export const metadata: Metadata = {
     telephone: false,
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: {
       index: true,
-      follow: false,
+      follow: true,
       noimageindex: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
+
   icons: {
     icon: "/favicon_io/favicon-32x32.png",
     shortcut: "/favicon_io/favicon-16x16.png",
@@ -137,19 +149,19 @@ export const metadata: Metadata = {
     url: "https://www.fast4k.com/",
     siteName: "Fast 4k",
 
-    // images: [
-    //   {
-    //     url: "https://nextjs.org/og.png", // Must be an absolute URL
-    //     width: 800,
-    //     height: 600,
-    //   },
-    //   {
-    //     url: "https://nextjs.org/og-alt.png", // Must be an absolute URL
-    //     width: 1800,
-    //     height: 1600,
-    //     alt: "My custom alt",
-    //   },
-    // ],
+    images: [
+      {
+        url: "/favicon_io/favicon-32x32.png", // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "/favicon_io/favicon-32x32.png", // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+        alt: "Fast4K",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -164,28 +176,29 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <link rel="canonical" href="https://www.fast4k.com/" />
+        {/* <meta name="robots" content="index,follow" /> */}
 
         {/* <link rel="icon" href="/favicon.ico" /> */}
         <link rel="icon" href="/favicon_io/favicon-16x16.png" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
-        <meta
+        {/* <meta
           property="og:title"
           content="Fast4k | Download High-Quality YouTube Videos & Audio"
         />
         <meta property="og:site_name" content="Fast 4k" />
-        <meta itemProp="name" content="Fast4K" />
-        <link
+        <meta itemProp="name" content="Fast4K" /> */}
+        {/* <link
           rel="shortcut icon"
           type="image/x-icon"
           href="/favicon_io/favicon-16x16.png"
-        />
-        <meta
+        /> */}
+        {/* <meta
           property="og:image"
           content="https://www.fast4k.com/_next/image?url=%2Fapp_logo.png&w=96&q=75"
         />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="website" /> */}
         {/* <meta charset="utf-8" /> */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <script
           src="https://assets.usestyle.ai/seonajsplugin"
           defer
