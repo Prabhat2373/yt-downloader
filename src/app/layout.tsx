@@ -10,7 +10,7 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fast4k | High-Quality YouTube Videos & Audio Downloads ",
+  title: "Fast4k | Download Youtube Videos and Audio",
   description:
     "Discover Fast4k: Your ultimate destination for high-quality YouTube video and audio downloads. Fast, reliable, and hassle-free. Explore now!",
   applicationName: "Fast4k",
@@ -148,8 +148,7 @@ export const metadata: Metadata = {
       "Discover the ultimate destination for high-quality YouTube video and audio downloads. Fast4k offers a seamless experience to access your favorite content in pristine quality. With our user-friendly interface, you can effortlessly download videos and audio tracks, ensuring a premium viewing and listening experience anytime, anywhere. Explore now and elevate your entertainment with our wide selection of content. Fast, reliable, and hassle-free downloads await you. Start downloading today!",
 
     url: "https://www.fast4k.com/",
-    siteName: "Fast 4k",
-
+    // siteName: "Fast 4k",
     images: [
       {
         url: "/favicon_io/favicon-32x32.png", // Must be an absolute URL
@@ -186,7 +185,7 @@ export default function RootLayout({
           property="og:title"
           content="Fast4k | Download High-Quality YouTube Videos & Audio"
         />
-        <meta property="og:site_name" content="Fast 4k" />
+        
         <meta itemProp="name" content="Fast4K" /> */}
         {/* <link
           rel="shortcut icon"
