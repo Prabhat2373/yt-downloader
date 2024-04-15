@@ -10,9 +10,10 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fast4k | Download Youtube Videos and Audio",
+  title:
+    "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
   description:
-    "Discover Fast4k: Your ultimate destination for high-quality YouTube video and audio downloads. Fast, reliable, and hassle-free. Explore now!",
+    "Fast4k is your go-to YouTube downloader for converting videos to MP4 and extracting high-quality MP3 audio. Download YouTube videos and playlists quickly and easily with our free online tool. Fast, secure, and hassle-free. Start downloading now!",
   applicationName: "Fast4k",
   manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",
