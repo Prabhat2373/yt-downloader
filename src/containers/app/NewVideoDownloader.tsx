@@ -34,9 +34,7 @@ export default function NewVideoDownloader() {
   const [audioFormats, setAudioFormats] = useState([]);
   const [meta, setMeta] = useState({});
   const [selectedFormat, setSelectedFormat] = useState(null);
-  const [videoUrl, setVideoUrl] = useState(
-    "https://youtu.be/xy8aJw1vYHo?si=Sq3XBsXqJ41PDc2z"
-  );
+  const [videoUrl, setVideoUrl] = useState("");
   // "https://youtu.be/hwNWx1GTSKo?si=PG_P_Zv73RyE0Wkt"
 
   const fetchFormats = async () => {

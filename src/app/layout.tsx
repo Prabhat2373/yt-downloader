@@ -148,7 +148,7 @@ export const metadata: Metadata = {
       "Discover the ultimate destination for high-quality YouTube video and audio downloads. Fast4k offers a seamless experience to access your favorite content in pristine quality. With our user-friendly interface, you can effortlessly download videos and audio tracks, ensuring a premium viewing and listening experience anytime, anywhere. Explore now and elevate your entertainment with our wide selection of content. Fast, reliable, and hassle-free downloads await you. Start downloading today!",
 
     url: "https://www.fast4k.com/",
-    // siteName: "Fast 4k",
+    siteName: "Fast 4K",
     images: [
       {
         url: "/favicon_io/favicon-32x32.png", // Must be an absolute URL
@@ -212,11 +212,38 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "http://schema.org",
-              "@type": "SoftwareApplication",
-              name: "Fast4k",
-            }),
+            __html: JSON.stringify([
+              {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                name: "Empower Your Media Journey",
+                url: "https://www.fast4k.com/",
+              },
+              {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                name: "DownloadYoutube Videos Effortlessly",
+                url: "https://www.fast4k.com/",
+              },
+              {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                name: "Download YouTube videos & MP3",
+                url: "https://www.fast4k.com/",
+              },
+              {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                name: "How it Works?",
+                url: "https://www.fast4k.com/",
+              },
+              {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                name: "download high-quality YouTube videos and audio tracks",
+                url: "https://www.fast4k.com/",
+              },
+            ]),
           }}
         />
       </Head>
