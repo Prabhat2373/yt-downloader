@@ -109,9 +109,8 @@ export const metadata: Metadata = {
     "YouTube to MP3 converter",
     "YouTube downloader for Chrome/Firefox",
     "YouTube downloader without software",
-    
   ],
-
+  themeColor: "#8129c3",
   twitter: {
     card: "summary_large_image",
     title: "Next.js",
@@ -189,7 +188,7 @@ export default function RootLayout({
       <Head>
         <link rel="canonical" href="https://www.fast4k.com/" />
         {/* <meta name="robots" content="index,follow" /> */}
-
+        <meta name="theme-color" content="#319197" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
         <link rel="icon" href="/favicon_io/favicon-16x16.png" />
         {/* <link rel="icon" href="/favicon.ico" /> */}

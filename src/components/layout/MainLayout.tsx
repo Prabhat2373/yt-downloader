@@ -36,7 +36,7 @@ const theme = createTheme({
   //   }),
   // },
   // black: "#000000",
-
+  colorScheme: "dark",
   colors: {
     // override dark colors to change them for all components
     dark: [
@@ -60,7 +60,6 @@ const MainLayout = ({ children }) => {
       <Analytics />
       <SpeedInsights />
       <MantineProvider
-        withCssVariables={true}
         withGlobalStyles={true}
         withNormalizeCSS={true}
         theme={theme}

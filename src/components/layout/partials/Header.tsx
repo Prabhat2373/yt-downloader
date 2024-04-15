@@ -47,6 +47,7 @@ function Header() {
     <header className={classes.header}>
       <Container size="xl" className={classes.inner}>
         {/* <MantineLogo size={28} vAlphabetic={"Fast4k"} /> */}
+
         <Link
           title="Fast 4K"
           href={"/"}
