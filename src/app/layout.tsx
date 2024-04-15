@@ -98,6 +98,18 @@ export const metadata: Metadata = {
     "youtube download",
     "download tube",
     "fast4k",
+    "Fast4k YouTube downloader",
+    "Fast4k video downloader",
+    "convert YouTube to MP4 online",
+    "Fast YouTube downloader",
+    "Convert YouTube video to audio",
+    "YouTube video downloader for PC/Mac",
+    "y2mate alternative",
+    "ssyoutube alternative",
+    "YouTube to MP3 converter",
+    "YouTube downloader for Chrome/Firefox",
+    "YouTube downloader without software",
+    
   ],
 
   twitter: {
