@@ -82,7 +82,24 @@ export default function NewVideoDownloader() {
 
   console.log("meta", meta);
 
+  const transformOptions = (options, labelMap) => {
+    return options.map((option) => {
+      const updatedLabel = labelMap[option.value] || option.label; // Get updated label if mapping exists
+      return { ...option, label: updatedLabel };
+    });
+  };
+
   const getOptions = () => {
+    const qualityLabels = {
+      "480p": "Basic Quality (480p)",
+      "720p HDR": "Standard Quality (720p)",
+      "1080p": "Premium Quality (1080p)",
+      "2160p": "Ultimate Quality (4K)",
+      "2160p HDR": "Ultimate Quality (4K) HDR",
+      "4320p HDR": "Extream Quality (8K) HDR",
+      "4320p": "Extream Quality (8K)",
+    };
+
     if (active === "video") {
       const videoOptions = videoFormats?.map((format) => {
         return {
@@ -90,7 +107,7 @@ export default function NewVideoDownloader() {
           value: format?.qualityLabel,
         };
       });
-      return videoOptions;
+      return transformOptions(videoOptions, qualityLabels);
     } else {
       const audioOptions = audioFormats?.map((format) => {
         return {
@@ -103,14 +120,9 @@ export default function NewVideoDownloader() {
   };
 
   console.log("options", getOptions());
+  console.log("hello");
 
   console.log("selectedFormat", selectedFormat);
-  function compareQuality(a, b) {
-    const qualityOrder = { "360p": 4, "480p": 3, "720p": 2, "1080p": 1 }; // Add more qualities as needed
-    const qualityA = qualityOrder[a.qualityLabel] || 0;
-    const qualityB = qualityOrder[b.qualityLabel] || 0;
-    return qualityB - qualityA; // Sort in descending order of quality
-  }
 
   // const handleDownload = async () => {
   //   if (active === "video") {
@@ -186,7 +198,7 @@ export default function NewVideoDownloader() {
       if (newTab) {
         // Poll the new tab to check for completion
         const pollInterval = 1000; // Polling interval in milliseconds
-        const pollTimeout = 30000; // Timeout for polling in milliseconds (e.g., 30 seconds)
+        const pollTimeout = 50000; // Timeout for polling in milliseconds (e.g., 30 seconds)
         const startTime = Date.now();
 
         const pollCompletion = async () => {
@@ -346,7 +358,7 @@ export default function NewVideoDownloader() {
                 </div>
               </div>
               <Flex gap={10} align={"center"}>
-                <Box w="50%">
+                <Box w="60%">
                   <Select
                     //   data={[
                     //     {
