@@ -36,7 +36,7 @@ const theme = createTheme({
   //   }),
   // },
   // black: "#000000",
-  colorScheme: "dark",
+  // colorScheme: "dark",
   colors: {
     // override dark colors to change them for all components
     dark: [

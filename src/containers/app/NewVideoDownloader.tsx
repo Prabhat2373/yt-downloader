@@ -49,11 +49,20 @@ export default function NewVideoDownloader() {
       }).then((response) => response.json());
       if (info) {
         // setDownloadFormats(info?.formats);
-        setVideoFormats(
-          info?.video_formats?.filter(
-            (fmt) => fmt?.hasAudio && fmt?.hasVideo
-          ) || []
+        const uniqueArray = Array.from(
+          info?.video_formats
+            ?.filter((fmt) => fmt?.hasVideo)
+            ?.reduce((map, obj) => {
+              // Use 'quality' as the key to check for uniqueness
+              if (!map.has(obj.quality)) {
+                map.set(obj.quality, obj); // Store the object in the Map
+              }
+              return map;
+            }, new Map())
+            .values()
         );
+
+        setVideoFormats(uniqueArray);
         setAudioFormats(info?.audio_formats || []);
         setMeta(info?.meta || {});
         setIsLoading(false);
@@ -103,19 +112,116 @@ export default function NewVideoDownloader() {
     return qualityB - qualityA; // Sort in descending order of quality
   }
 
-  const handleDownload = () => {
-    if (active === "video") {
-      const videoUrl = videoFormats
-        ?.sort((a, b) => {
-          // Extract the numeric part of qualityLabel using regular expressions
-          const qualityA = parseInt(a.qualityLabel); // Convert to integer
-          const qualityB = parseInt(b.qualityLabel); // Convert to integer
+  // const handleDownload = async () => {
+  //   if (active === "video") {
+  //     // const videoUrl = videoFormats
+  //     //   ?.sort((a, b) => {
+  //     //     // Extract the numeric part of qualityLabel using regular expressions
+  //     //     const qualityA = parseInt(a.qualityLabel); // Convert to integer
+  //     //     const qualityB = parseInt(b.qualityLabel); // Convert to integer
 
-          // Compare quality values (descending order)
-          return qualityB - qualityA;
-        })
-        ?.find((video) => video?.qualityLabel === selectedFormat)?.url;
-      window.open(videoUrl, "_blank");
+  //     //     // Compare quality values (descending order)
+  //     //     return qualityB - qualityA;
+  //     //   })
+  //     //   ?.find((video) => video?.qualityLabel === selectedFormat)?.url;
+  //     // window.open(videoUrl, "_blank");
+  //     // const res = await fetch(
+  //     //   `${process.env.NEXT_PUBLIC_API_BASE_URL}/merge?url=${videoUrl}&format=${selectedFormat}`
+  //     // );
+  //     // const result = await res?.json();
+  //     // console.log("result", result);
+
+  //     const newTab = window.open("", "_blank");
+  //     if (newTab) {
+  //       try {
+  //         // Hit the API to initiate video download
+  //         const res = await fetch(
+  //           `${process.env.NEXT_PUBLIC_API_BASE_URL}/merge?url=${videoUrl}&format=${selectedFormat}`
+  //         );
+
+  //         // Check if API request was successful (HTTP status code 200-299)
+  //         if (res.ok) {
+  //           // Close the new tab on success
+  //           newTab.close();
+  //           // Return focus to the main tab (current window)
+  //           window.focus();
+  //         } else {
+  //           console.error("Failed to download video:", res.statusText);
+  //           // Handle error scenario (e.g., display error message)
+  //         }
+  //       } catch (error) {
+  //         console.error("Error downloading video:", error);
+  //         // Handle error scenario (e.g., display error message)
+  //       }
+  //     }
+  //   } else {
+  //     const audioUrl = audioFormats?.find(
+  //       (audio) => audio?.audioBitrate === Number(selectedFormat)
+  //     )?.url;
+  //     window.open(audioUrl, "_blank");
+  //   }
+  // };
+
+  const handleDownload = async () => {
+    if (active === "video") {
+      // const videoUrl = videoFormats
+      //   ?.sort((a, b) => {
+      //     // Extract the numeric part of qualityLabel using regular expressions
+      //     const qualityA = parseInt(a.qualityLabel); // Convert to integer
+      //     const qualityB = parseInt(b.qualityLabel); // Convert to integer
+
+      //     // Compare quality values (descending order)
+      //     return qualityB - qualityA;
+      //   })
+      //   ?.find((video) => video?.qualityLabel === selectedFormat)?.url;
+
+      // // Check if videoUrl is available
+
+      // Construct the API URL for video download
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/merge?url=${videoUrl}&format=${selectedFormat}`;
+
+      // Open the API URL in a new tab
+      const newTab = window.open(apiUrl, "_blank");
+
+      if (newTab) {
+        // Poll the new tab to check for completion
+        const pollInterval = 1000; // Polling interval in milliseconds
+        const pollTimeout = 30000; // Timeout for polling in milliseconds (e.g., 30 seconds)
+        const startTime = Date.now();
+
+        const pollCompletion = async () => {
+          try {
+            // Check if the new tab is closed or exceeded the polling timeout
+            if (newTab.closed || Date.now() - startTime > pollTimeout) {
+              console.log("Download completed or timed out.");
+              return;
+            }
+
+            // Fetch the state of the new tab
+            const tabState = await newTab.fetch(apiUrl);
+
+            // Check if the download is completed successfully
+            if (tabState.ok) {
+              console.log("Download completed successfully.");
+              // Close the new tab upon successful completion
+              newTab.close();
+              // Return focus to the main tab (current window)
+              window.focus();
+            } else {
+              // Continue polling if download is not completed yet
+              setTimeout(pollCompletion, pollInterval);
+            }
+          } catch (error) {
+            console.error("Error polling for download completion:", error);
+          }
+        };
+
+        // Start polling for download completion
+        pollCompletion();
+      } else {
+        console.error("Failed to open new tab for download.");
+        // Handle error scenario (e.g., display error message)
+      }
     } else {
       const audioUrl = audioFormats?.find(
         (audio) => audio?.audioBitrate === Number(selectedFormat)
