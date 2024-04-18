@@ -17,6 +17,7 @@ import {
   Flex,
   Grid,
   Image,
+  Paper,
   Select,
   Text,
   Title,
@@ -25,6 +26,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { IconCircleArrowDownFilled, IconDownload } from "@tabler/icons-react";
 import DownloadContainerSkeleton from "@/components/ui/skeleton/DownloadContainerSkeleton";
+import URLContainer from "./url/URLContainer";
 
 export default function NewVideoDownloader() {
   // const [formats,setFormats]
@@ -90,14 +92,23 @@ export default function NewVideoDownloader() {
   };
 
   const getOptions = () => {
-    const qualityLabels = {
+    const videoQualityLabels = {
       "480p": "Basic Quality (480p)",
       "720p HDR": "Standard Quality (720p)",
       "1080p": "Premium Quality (1080p)",
-      "2160p": "Ultimate Quality (4K)",
+      "2160p": "Ultimate Quality 2160p (4K)",
       "2160p HDR": "Ultimate Quality (4K) HDR",
       "4320p HDR": "Extream Quality (8K) HDR",
       "4320p": "Extream Quality (8K)",
+      "1440p": "High Quality 1440p (4k)",
+      "720p": "High Defination (720p)",
+    };
+
+    const audioQualityLabels = {
+      48: "Basic Audio (48 Kbps)",
+      64: "Data Saver (64 Kbps)",
+      128: "High-Quality Audio (128 Kbps)",
+      160: "Premium Audio (160 Kbps)",
     };
 
     if (active === "video") {
@@ -107,7 +118,7 @@ export default function NewVideoDownloader() {
           value: format?.qualityLabel,
         };
       });
-      return transformOptions(videoOptions, qualityLabels);
+      return transformOptions(videoOptions, videoQualityLabels);
     } else {
       const audioOptions = audioFormats?.map((format) => {
         return {
@@ -115,7 +126,7 @@ export default function NewVideoDownloader() {
           value: format?.audioBitrate?.toString(),
         };
       });
-      return audioOptions;
+      return transformOptions(audioOptions, audioQualityLabels);
     }
   };
 
@@ -124,72 +135,8 @@ export default function NewVideoDownloader() {
 
   console.log("selectedFormat", selectedFormat);
 
-  // const handleDownload = async () => {
-  //   if (active === "video") {
-  //     // const videoUrl = videoFormats
-  //     //   ?.sort((a, b) => {
-  //     //     // Extract the numeric part of qualityLabel using regular expressions
-  //     //     const qualityA = parseInt(a.qualityLabel); // Convert to integer
-  //     //     const qualityB = parseInt(b.qualityLabel); // Convert to integer
-
-  //     //     // Compare quality values (descending order)
-  //     //     return qualityB - qualityA;
-  //     //   })
-  //     //   ?.find((video) => video?.qualityLabel === selectedFormat)?.url;
-  //     // window.open(videoUrl, "_blank");
-  //     // const res = await fetch(
-  //     //   `${process.env.NEXT_PUBLIC_API_BASE_URL}/merge?url=${videoUrl}&format=${selectedFormat}`
-  //     // );
-  //     // const result = await res?.json();
-  //     // console.log("result", result);
-
-  //     const newTab = window.open("", "_blank");
-  //     if (newTab) {
-  //       try {
-  //         // Hit the API to initiate video download
-  //         const res = await fetch(
-  //           `${process.env.NEXT_PUBLIC_API_BASE_URL}/merge?url=${videoUrl}&format=${selectedFormat}`
-  //         );
-
-  //         // Check if API request was successful (HTTP status code 200-299)
-  //         if (res.ok) {
-  //           // Close the new tab on success
-  //           newTab.close();
-  //           // Return focus to the main tab (current window)
-  //           window.focus();
-  //         } else {
-  //           console.error("Failed to download video:", res.statusText);
-  //           // Handle error scenario (e.g., display error message)
-  //         }
-  //       } catch (error) {
-  //         console.error("Error downloading video:", error);
-  //         // Handle error scenario (e.g., display error message)
-  //       }
-  //     }
-  //   } else {
-  //     const audioUrl = audioFormats?.find(
-  //       (audio) => audio?.audioBitrate === Number(selectedFormat)
-  //     )?.url;
-  //     window.open(audioUrl, "_blank");
-  //   }
-  // };
-
   const handleDownload = async () => {
     if (active === "video") {
-      // const videoUrl = videoFormats
-      //   ?.sort((a, b) => {
-      //     // Extract the numeric part of qualityLabel using regular expressions
-      //     const qualityA = parseInt(a.qualityLabel); // Convert to integer
-      //     const qualityB = parseInt(b.qualityLabel); // Convert to integer
-
-      //     // Compare quality values (descending order)
-      //     return qualityB - qualityA;
-      //   })
-      //   ?.find((video) => video?.qualityLabel === selectedFormat)?.url;
-
-      // // Check if videoUrl is available
-
-      // Construct the API URL for video download
       const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/merge?url=${videoUrl}&format=${selectedFormat}`;
 
       // Open the API URL in a new tab
@@ -244,7 +191,7 @@ export default function NewVideoDownloader() {
 
   useEffect(() => {
     setSelectedFormat(getOptions()[0]?.value);
-  }, [active]);
+  }, [active, videoFormats]);
 
   console.log("videoFormats", videoFormats);
 
@@ -252,161 +199,131 @@ export default function NewVideoDownloader() {
     <>
       <Hero>
         <Box mb={!isLoading && !meta?.title ? 130 : 0}>
-          <div className="url_container_top">
-            {/* <div className="w-full flex gap-2 url_container_bottom"> */}
-            <div className="url_container_bottom">
-              {/* <Grid columns={4} align="center" content="center"> */}
-              <Grid grow gutter="xs" columns={12} align="center">
-                {/* <Grid.Col span={{ base: 3, sm: 3, lg: 3 }}> */}
-                <Grid.Col span={9}>
-                  <div className="">
-                    {/* <div className="flex items-center   w-full  gap-2 rounded-2xl "> */}
-                    <div className="">
-                      <UrlInput
-                        value={videoUrl}
-                        type="url"
-                        title="Enter Youtube URL"
-                        onChange={(e) => setVideoUrl(e?.target?.value)}
-                        className="w-full  rounded-3xl outline-none py-3"
-                        placeholder="Paste Youtube Video URL.."
-                      />
-                    </div>
-                  </div>
-                </Grid.Col>
-
-                {/* <Grid.Col span={{ base: 2, sm: 1, lg: 1 }}> */}
-                <Grid.Col span={3}>
-                  <AnimatedButton
-                    // icon={<IconStars />}
-
-                    radius="lg"
-                    onClick={fetchFormats}
-                    disabled={!videoUrl || isLoading}
-                    isLoading={isLoading}
-                    size="lg"
-                    title="Get Download Link"
-                  >
-                    GET LINK
-                    <IconPower />
-                  </AnimatedButton>
-                </Grid.Col>
-              </Grid>
-            </div>
-          </div>
+          <URLContainer
+            {...{ videoUrl, setVideoUrl, fetchFormats, isLoading }}
+          />
         </Box>
         {meta?.title && !isLoading ? (
-          <Flex gap={20} mt={10} direction={{ base: "column", md: "row" }}>
-            <div>
-              {meta?.title ? (
-                <div className="thumbnail_container">
-                  <Card shadow="sm" padding="lg" radius="md" withBorder w={450}>
-                    <Card.Section>
-                      <Image
-                        // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                        src={
-                          meta?.thumbnails?.[meta?.thumbnails?.length - 1]
-                            ?.url ??
-                          "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
-                        }
-                        // height={160}
-                        alt="Youtube video thumbnail"
-                      />
-                    </Card.Section>
+          <Paper
+            mt={30}
+            radius="md"
+            withBorder
+            p="xl"
+            bg="var(--mantine-color-body)"
+          >
+            <Flex gap={20} direction={{ base: "column", md: "row" }}>
+              <Flex>
+                {meta?.title ? (
+                  <div className="thumbnail_container">
+                    <Card
+                      shadow="sm"
+                      padding="lg"
+                      radius="md"
+                      withBorder
+                      w={450}
+                    >
+                      <Card.Section>
+                        <Image
+                          // src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                          src={
+                            meta?.thumbnails?.[meta?.thumbnails?.length - 1]
+                              ?.url ??
+                            "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+                          }
+                          // height={160}
+                          alt="Youtube video thumbnail"
+                        />
+                      </Card.Section>
 
-                    {/* <Text size="sm" mt={10}>
+                      {/* <Text size="sm" mt={10}>
                     {meta?.title ?? "-"}
                   </Text> */}
-                  </Card>
-                </div>
-              ) : null}
-            </div>
-            <Flex direction={"column"} justify={"space-between"}>
-              {videoFormats?.length || audioFormats?.length ? (
-                <div className="flex justify-start w-full tab-container">
-                  <TabsComponent active={active} setActive={setActive} />
-                </div>
-              ) : null}
+                    </Card>
+                  </div>
+                ) : null}
+              </Flex>
+              <Flex direction={"column"} justify={"space-between"}>
+                {videoFormats?.length || audioFormats?.length ? (
+                  <div className="flex justify-start w-full tab-container">
+                    <TabsComponent active={active} setActive={setActive} />
+                  </div>
+                ) : null}
 
-              <div>
-                <div>
-                  <Title m={4}>{meta?.title ?? "NA"}</Title>
-                  <Flex gap={12} mb={5} align={"center"}>
-                    <img
-                      src={
-                        meta?.author?.thumbnails[
-                          meta?.author?.thumbnails?.length - 1
-                        ]?.url
-                      }
-                      width={20}
-                      height={20}
-                      alt="Channel Icon"
-                      style={{
-                        borderRadius: "50%",
+                <Box my={10}>
+                  <div>
+                    <Title m={4} order={2}>
+                      {meta?.title ?? "NA"}
+                    </Title>
+                    <Flex gap={12} mb={5} align={"center"}>
+                      <img
+                        src={
+                          meta?.author?.thumbnails[
+                            meta?.author?.thumbnails?.length - 1
+                          ]?.url
+                        }
+                        width={20}
+                        height={20}
+                        alt="Channel Icon"
+                        style={{
+                          borderRadius: "50%",
+                        }}
+                      />
+                      <Flex align="center" gap={6}>
+                        <Text>{meta?.author?.name}</Text>
+
+                        <Text size="lg" c="dimmed">
+                          •
+                        </Text>
+                        <Text fw={"normal"}>
+                          {convertSecondsToMinutes(meta?.lengthSeconds)} min
+                        </Text>
+                      </Flex>
+                    </Flex>
+                  </div>
+                </Box>
+                <Flex gap={10} align={"center"}>
+                  <Box w="100%">
+                    <Select
+                      size="md"
+                      radius={"md"}
+                      data={getOptions()}
+                      onChange={(option) => {
+                        console.log("option", option);
+                        setSelectedFormat(option);
+                      }}
+                      placeholder="Select Format.."
+                      allowDeselect={false}
+                      title="Select Format.."
+                      checkIconPosition="right"
+                      //   value={getOptions()?.find(
+                      //     (opt) => opt?.value === selectedFormat
+                      //   )}
+                      value={selectedFormat}
+                      comboboxProps={{
+                        transitionProps: { transition: "pop", duration: 200 },
                       }}
                     />
-                    <Flex align="center" gap={6}>
-                      <Text>{meta?.author?.name}</Text>
-
-                      <Text size="lg" c="dimmed">
-                        •
-                      </Text>
-                      <Text fw={"normal"}>
-                        {convertSecondsToMinutes(meta?.lengthSeconds)} min
-                      </Text>
-                    </Flex>
-                  </Flex>
-                </div>
-              </div>
-              <Flex gap={10} align={"center"}>
-                <Box w="60%">
-                  <Select
-                    //   data={[
-                    //     {
-                    //       label: "MP4(720p)",
-                    //       value: "MP4(720p)",
-                    //     },
-                    //     {
-                    //       label: "MP3(128kbps)",
-                    //       value: "MP3(128kbps)",
-                    //     },
-                    //   ]}
-                    data={getOptions()}
-                    onChange={(option) => {
-                      console.log("option", option);
-                      setSelectedFormat(option);
-                    }}
-                    placeholder="Select Format.."
-                    allowDeselect={false}
-                    title="Select Format.."
-                    checkIconPosition="right"
-                    //   value={getOptions()?.find(
-                    //     (opt) => opt?.value === selectedFormat
-                    //   )}
-                    value={selectedFormat}
-                    comboboxProps={{
-                      transitionProps: { transition: "pop", duration: 200 },
-                    }}
-                  />
-                </Box>
-                <Box w={"100%"}>
-                  <AnimatedButton
-                    icon={<IconDownload />}
-                    size="md"
-                    title="download audio"
-                    onClick={handleDownload}
-                    disabled={!selectedFormat}
-                    // className="bg-green-500 text-white px-4 py-2 rounded-md mt-2"
-                  >
-                    {/* {isDownloading ? <Loader /> : "Download"} */}
-                    <Flex align={"center"} gap={3}>
-                      <Text fw={"bold"}>Download</Text>
-                      <IconCircleArrowDownFilled />
-                    </Flex>
-                  </AnimatedButton>
-                </Box>
+                  </Box>
+                  <Box w={"100%"}>
+                    <AnimatedButton
+                      icon={<IconDownload />}
+                      size="md"
+                      title="download audio"
+                      onClick={handleDownload}
+                      disabled={!selectedFormat}
+                      // className="bg-green-500 text-white px-4 py-2 rounded-md mt-2"
+                    >
+                      {/* {isDownloading ? <Loader /> : "Download"} */}
+                      <Flex align={"center"} gap={3}>
+                        <Text fw={"bold"}>Download</Text>
+                        <IconCircleArrowDownFilled />
+                      </Flex>
+                    </AnimatedButton>
+                  </Box>
+                </Flex>
               </Flex>
             </Flex>
-          </Flex>
+          </Paper>
         ) : null}
         {isLoading ? <DownloadContainerSkeleton /> : null}
       </Hero>

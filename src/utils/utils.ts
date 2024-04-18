@@ -42,3 +42,16 @@ export function convertSecondsToMinutes(seconds) {
   // Return formatted string
   return minutesStr + ":" + secondsStr;
 }
+
+
+export const isValidUrl = (videoUrl:string) => {
+  try {
+    // Attempt to create a new URL object with the provided videoUrl
+    const url = new URL(videoUrl);
+    // If the URL object is successfully created, return true
+    return true;
+  } catch (error) {
+    // If an error occurs during URL parsing (invalid URL format), return false
+    return false;
+  }
+};

@@ -27,7 +27,7 @@ function Header() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { colorScheme } = useMantineColorScheme();
-  console.log("colorScheme", colorScheme);
+  console.log("colorSchemeee", colorScheme);
   const items = links.map((link) => (
     <a
       key={link.label}
@@ -51,11 +51,20 @@ function Header() {
         <Link
           title="Fast 4K"
           href={"/"}
-          style={{ color: `${colorScheme === "dark" ? "white" : "black"}` }}
+          // style={{
+          //   color: `${
+          //     colorScheme === "dark" ? "white !important" : "black !important"
+          //   }`,
+          // }}
+          // color={colorScheme === "dark" ? "white" : "black"}
         >
           <Flex align={"center"} gap={8}>
             <Image src="/app_logo.png" alt="App Logo" width={45} height={45} />
-            <Text fw={"800"} fs={"100"}>
+            <Text
+              fw={"800"}
+              fs={"100"}
+              c={colorScheme === "dark" ? "white " : "black"}
+            >
               Fast4K
             </Text>
           </Flex>
