@@ -205,6 +205,13 @@ window.dataLayer = window.dataLayer || [];
 
   gtag('config', 'G-3N8N8975P0');
 </script> */}
+        <script>
+          {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3N8N8975P0');`}
+        </script>
         <Script
           strategy="lazyOnload"
           id="ga-script"
