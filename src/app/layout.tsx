@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     // "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
     "Fast4k - Download Youtube Videos online | 4k, 8k, HDR for FREE",
   description:
-    "Fast4k is your go-to YouTube downloader for converting videos to MP4 and extracting high-quality MP3 audio. Download YouTube videos and playlists quickly and easily with our free online tool. Fast, secure, and hassle-free. Start downloading now!",
+    "Fast4k is your go-to YouTube video downloader for converting videos to MP4 and extracting high-quality MP3 audio. Download YouTube videos and playlists quickly and easily with our free online tool. Fast, secure, and hassle-free. Start downloading now!",
   applicationName: "Fast4k",
   manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",
@@ -131,13 +131,13 @@ export const metadata: Metadata = {
   ],
   themeColor: "#8129c3",
   twitter: {
-    card: "summary_large_image",
-    title: "Next.js",
-    description: "The React Framework for the Web",
-    siteId: "1467726470533754880",
-    creator: "@nextjs",
-    creatorId: "1467726470533754880",
-    images: ["https://nextjs.org/og.png"], // Must be an absolute URL
+    card: "https://www.fast4k.com/app_logo.png",
+    title: "Fast4k",
+    description:
+      "Fast4k - Download Youtube Videos online | 4k, 8k, HDR for FREE",
+
+    creator: "Prabhat Tambe",
+    images: ["https://www.fast4k.com/app_logo.png"], // Must be an absolute URL
   },
   // authors: [{ name: "Seb" }, { name: "Josh", url: "https://nextjs.org" }],
   // creator: "Jiachi Liu",
