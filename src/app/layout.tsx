@@ -236,43 +236,6 @@ window.dataLayer = window.dataLayer || [];
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
           crossOrigin="anonymous"
         ></script>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "http://schema.org",
-                "@type": "SoftwareApplication",
-                name: "Empower Your Media Journey",
-                url: "https://www.fast4k.com/",
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "SoftwareApplication",
-                name: "DownloadYoutube Videos Effortlessly",
-                url: "https://www.fast4k.com/",
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "SoftwareApplication",
-                name: "Download YouTube videos & MP3",
-                url: "https://www.fast4k.com/",
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "SoftwareApplication",
-                name: "How it Works?",
-                url: "https://www.fast4k.com/",
-              },
-              {
-                "@context": "http://schema.org",
-                "@type": "SoftwareApplication",
-                name: "download high-quality YouTube videos and audio tracks",
-                url: "https://www.fast4k.com/",
-              },
-            ]),
-          }}
-        />
       </Head>
       {/* <script
         async
@@ -285,6 +248,50 @@ window.dataLayer = window.dataLayer || [];
         <MainLayout>{children}</MainLayout>
       </body>
       <GoogleAnalytics gaId="G-3N8N8975P0" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "http://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Free Youtube downloader",
+              url: "https://www.fast4k.com/",
+              tool: [
+                {
+                  "@type": "HowToTool",
+                  name: "Youtube video downloader",
+                },
+              ],
+            },
+
+            {
+              "@context": "http://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Download Youtube Videos online",
+              url: "https://www.fast4k.com/",
+            },
+            {
+              "@context": "http://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Download YouTube videos & MP3",
+              url: "https://www.fast4k.com/",
+            },
+            {
+              "@context": "http://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Fast4k youtube downloader",
+              url: "https://www.fast4k.com/",
+            },
+            {
+              "@context": "http://schema.org",
+              "@type": "SoftwareApplication",
+              name: "download high-quality YouTube videos and audio ",
+              url: "https://www.fast4k.com/",
+            },
+          ]),
+        }}
+      />
     </html>
   );
 }
