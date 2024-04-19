@@ -13,7 +13,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title:
-    "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
+    // "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
+    "Fast4k - Download Youtube Videos online | 4k, 8k, HDR for FREE",
   description:
     "Fast4k is your go-to YouTube downloader for converting videos to MP4 and extracting high-quality MP3 audio. Download YouTube videos and playlists quickly and easily with our free online tool. Fast, secure, and hassle-free. Start downloading now!",
   applicationName: "Fast4k",
@@ -112,6 +113,21 @@ export const metadata: Metadata = {
     "YouTube to MP3 converter",
     "YouTube downloader for Chrome/Firefox",
     "YouTube downloader without software",
+    "new youtube downloader",
+    "download new youtube",
+    "download youtube online",
+    "youtubedownloader",
+    "youtube short downloader",
+    "short downloader",
+    "2024 youtube downloader",
+    "8k youtube downloader",
+    "4k youtube downloader online",
+    "4k downloader",
+    "hdr youtube downloader",
+    "downloader hdr youtube videos",
+    "youtube video",
+    "youtube shorts downloader",
+    "download youtube shorts",
   ],
   themeColor: "#8129c3",
   twitter: {
