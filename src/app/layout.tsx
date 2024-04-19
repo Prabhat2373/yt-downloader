@@ -6,6 +6,7 @@ import { createTheme, MantineProvider, rem, Container } from "@mantine/core";
 import { ColorSchemeScript } from "@mantine/core";
 import MainLayout from "@/components/layout/MainLayout";
 import Head from "next/head";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -192,6 +193,31 @@ export default function RootLayout({
         <meta name="theme-color" content="#319197" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
         <link rel="icon" href="/favicon_io/favicon-16x16.png" />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-3N8N8975P0"
+        ></script>
+        {/* <script>
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3N8N8975P0');
+</script> */}
+        <Script
+          strategy="lazyOnload"
+          id="ga-script"
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3N8N8975P0');
+          `,
+          }}
+        />
+
         {/* <link rel="icon" href="/favicon.ico" /> */}
         {/* <meta
           property="og:title"
