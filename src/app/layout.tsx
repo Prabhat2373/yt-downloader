@@ -7,6 +7,7 @@ import { ColorSchemeScript } from "@mantine/core";
 import MainLayout from "@/components/layout/MainLayout";
 import Head from "next/head";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -205,25 +206,6 @@ window.dataLayer = window.dataLayer || [];
 
   gtag('config', 'G-3N8N8975P0');
 </script> */}
-        <script>
-          {` window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3N8N8975P0');`}
-        </script>
-        <Script
-          strategy="lazyOnload"
-          id="ga-script"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-3N8N8975P0');
-          `,
-          }}
-        />
 
         {/* <link rel="icon" href="/favicon.ico" /> */}
         {/* <meta
@@ -302,6 +284,7 @@ window.dataLayer = window.dataLayer || [];
 
         <MainLayout>{children}</MainLayout>
       </body>
+      <GoogleAnalytics gaId="G-3N8N8975P0" />
     </html>
   );
 }
