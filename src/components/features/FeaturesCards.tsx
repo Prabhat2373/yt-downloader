@@ -59,15 +59,14 @@ export function FeaturesCards() {
 
       <Text
         // fw={500}
-        
 
         className={classes.description}
         ta="center"
         mt="md"
         title="description"
       >
-        Discover the simple steps to effortlessly download high-quality YouTube
-        videos and audio tracks.
+        Explore the straightforward process for seamlessly downloading
+        high-quality YouTube videos and audio tracks.
       </Text>
 
       <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>

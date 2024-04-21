@@ -303,7 +303,7 @@ window.dataLayer = window.dataLayer || [];
             {
               "@context": "http://schema.org",
               "@type": "SoftwareApplication",
-              name: "Fast4k youtube downloader",
+              name: "Download Youtube Videos",
               url: "https://www.fast4k.com/",
             },
             {
