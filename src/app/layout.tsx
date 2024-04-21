@@ -269,6 +269,13 @@ window.dataLayer = window.dataLayer || [];
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Fast4k",
+              alternateName: "Fast4k",
+              url: "https://www.fast4k.com",
+            },
+            {
               "@context": "http://schema.org",
               "@type": "SoftwareApplication",
               name: "Free Youtube downloader",

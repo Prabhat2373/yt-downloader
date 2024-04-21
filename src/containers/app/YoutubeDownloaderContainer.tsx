@@ -91,7 +91,7 @@ export default function YoutubeDownloaderContainer() {
                   size="lg"
                   title="Get Download Link"
                 >
-                  GET LINK
+                  GET STARTED
                   <IconPower />
                 </AnimatedButton>
               </Grid.Col>
