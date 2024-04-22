@@ -51,6 +51,7 @@ function Header() {
         <Link
           title="Fast 4K"
           href={"/"}
+          className="app-nav-link"
           // style={{
           //   color: `${
           //     colorScheme === "dark" ? "white !important" : "black !important"
@@ -63,7 +64,7 @@ function Header() {
             <Text
               fw={"800"}
               fs={"100"}
-              c={colorScheme === "dark" ? "white " : "black"}
+              // c={colorScheme === "dark" ? "white " : "black"}
             >
               Fast4K
             </Text>

@@ -147,3 +147,14 @@ a {
   min-height: 100%;
   opacity: 0.5;
 }
+
+
+.app-nav-link {
+  display: block;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: var(--mantine-font-size-sm);
+  padding-top: rem(3px);
+  padding-bottom: rem(3px);
+
+
+}

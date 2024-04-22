@@ -14,9 +14,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title:
     // "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
-    "Fast4k - Download Youtube Videos online | 4k, 8k, HDR for FREE",
+    "Fast4k - Download Youtube Videos online | 4k, 8k, HDR,1080P",
   description:
-    "Fast4k is your go-to YouTube video downloader for converting videos to MP4 and extracting high-quality MP3 audio. Download YouTube videos and playlists quickly and easily with our free online tool. Fast, secure, and hassle-free. Start downloading now!",
+    "Fast4k is your go-to YouTube video downloader for converting videos to MP4 and high-quality MP3 audio. Download YouTube videos and Audio For FREE",
   applicationName: "Fast4k",
   manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",

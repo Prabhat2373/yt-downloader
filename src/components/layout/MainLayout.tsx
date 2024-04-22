@@ -66,13 +66,11 @@ const MainLayout = ({ children }) => {
         <>
           <Header />
           {/* <Image src={}/>  */}
-          <div className="app_background ">
-            <div className="app_bg_texture"></div>
-          </div>
+         
           <div
-            style={{
-              minHeight: "100vh",
-            }}
+          // style={{
+          //   minHeight: "100vh",
+          // }}
           >
             {children}
           </div>
