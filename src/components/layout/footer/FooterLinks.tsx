@@ -14,20 +14,20 @@ const data = [
     title: "About",
     links: [
       { label: "Features", link: "features" },
-      { label: "Pricing", link: "#" },
+      // { label: "Pricing", link: "#" },
       { label: "Support", link: "contact" },
       { label: "FAQs", link: "faq" },
     ],
   },
-  {
-    title: "Project",
-    links: [
-      { label: "Contribute", link: "#" },
-      { label: "Media assets", link: "#" },
-      { label: "Changelog", link: "#" },
-      { label: "Releases", link: "#" },
-    ],
-  },
+  // {
+  //   title: "Project",
+  //   links: [
+//     { label: "Contribute", link: "#" },
+  //     { label: "Media assets", link: "#" },
+  //     { label: "Changelog", link: "#" },
+  //     { label: "Releases", link: "#" },
+  //   ],
+  // },
   {
     title: "Community",
     links: [

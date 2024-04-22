@@ -9,7 +9,7 @@ export function CardGradient({ data }) {
         size="xl"
         radius="md"
         variant="gradient"
-        gradient={{ deg: 0, from: "#ee2a7b", to: "#6228d7" }}
+        gradient={{ deg: 0, from: "#EA00FE", to: "#6228d7" }}
       >
         <data.icon style={{ width: rem(28), height: rem(28) }} stroke={1.5} />
       </ThemeIcon>

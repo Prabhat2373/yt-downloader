@@ -81,7 +81,8 @@ function Hero({ children }) {
           <Text
             component="span"
             // gradient={{ from: "#734AEB", to: "#ed5bff" }}
-            gradient={{ from: "#ee2a7b", to: "#6228d7" }}
+            // gradient={{ from: "#e_e2a7b", to: "#6_228d7" }}
+            gradient={{ from: "#EA00FE", to: "#6135E9" }}
             // className={classes.highlight}
             inherit
             variant="gradient"

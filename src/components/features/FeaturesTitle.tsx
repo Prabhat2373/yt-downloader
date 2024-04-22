@@ -51,7 +51,7 @@ export function FeaturesTitle() {
         size={44}
         radius="md"
         variant="gradient"
-        gradient={{ deg: 133, from: "blue", to: "cyan" }}
+        gradient={{ deg: 120, from: "#EA00FE", to: "#6135E9" }}
       >
         <feature.icon
           style={{ width: rem(26), height: rem(26) }}
@@ -71,9 +71,16 @@ export function FeaturesTitle() {
     <div className={classes.wrapper}>
       <Grid gutter={80}>
         <Grid.Col span={{ base: 12, md: 5 }}>
-          <Title className={classes.title} order={2}>
+          <Text
+            className={classes.title}
+            component="h1"
+            gradient={{ from: "#EA00FE", to: "#6135E9" }}
+            inherit
+            variant="gradient"
+          >
             Discover the Fast4k Advantage
-          </Title>
+          </Text>
+
           <Text c="dimmed">
             Explore the features that set Fast4k apart in the world of YouTube
             downloading.
@@ -82,7 +89,7 @@ export function FeaturesTitle() {
           <Link href="/app">
             <Button
               variant="gradient"
-              gradient={{ deg: 133, from: "blue", to: "cyan" }}
+              gradient={{ deg: 120, from: "#EA00FE", to: "#6135E9" }}
               size="lg"
               radius="md"
               mt="xl"
