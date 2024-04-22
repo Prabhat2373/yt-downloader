@@ -52,7 +52,7 @@ export function FooterLinks() {
         className={classes.link}
         href={link.link}
         title={link.label}
-        target={`${group.title === 'Community' ?'_blank':'_self'}`}
+        target={`${group.title === "Community" ? "_blank" : "_self"}`}
         // onClick={(event) => event.preventDefault()}
       >
         {link.label}
@@ -119,6 +119,7 @@ export function FooterLinks() {
           <Link
             href="https://twitter.com/code_prabhat"
             title="Fast4k Twitter Handle"
+            rel="noopener noreferrer"
             target="_blank"
           >
             <ActionIcon title="twitter" size="lg" color="gray" variant="subtle">
@@ -132,6 +133,7 @@ export function FooterLinks() {
             href="https://www.youtube.com/channel/UC-N0_T4Qf0rUYr4CK0PHkwA"
             target="_blank"
             title="Fast4k youtube handle"
+            rel="noopener noreferrer"
           >
             <ActionIcon title="youtube" size="lg" color="gray" variant="subtle">
               <IconBrandYoutube
@@ -144,6 +146,7 @@ export function FooterLinks() {
             href="https://www.instagram.com/_prabhat_10/"
             target="_blank"
             title="fast4k instagram handle"
+            rel="noopener noreferrer"
           >
             <ActionIcon
               title="instagram"

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     // "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
     "Fast4k - Download Youtube Videos online | 4k, 8k, HDR,1080P",
   description:
-    "Fast4k is your go-to YouTube video downloader for converting videos to MP4 and high-quality MP3 audio. Download YouTube videos and Audio For FREE",
+    "Fast4k is your ultimate YouTube video downloader, providing quick conversions to MP4 and high-quality MP3 audio. Simplify your YouTube downloads with Fast4k's efficient service.",
   applicationName: "Fast4k",
   manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",
