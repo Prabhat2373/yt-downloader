@@ -47,16 +47,16 @@ const data = [
 export function FooterLinks() {
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
-      <Text<"a">
+      <Link
         key={index}
         className={classes.link}
-        component="a"
         href={link.link}
         title={link.label}
+        target={`${group.title === 'Community' ?'_blank':'_self'}`}
         // onClick={(event) => event.preventDefault()}
       >
         {link.label}
-      </Text>
+      </Link>
     ));
 
     return (
