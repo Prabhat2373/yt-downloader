@@ -17,7 +17,7 @@ const mockdata = [
   {
     title: "Extreme performance",
     description:
-      "Experience unparalleled speed and efficiency with our platform's cutting-edge technology, ensuring swift downloads of your favorite content without compromise.",
+      "Download Youtube Videos Online in 8k, 4k, HDR, 1080p in just couple of seconds. which is possible with parallel streaming. ",
     icon: IconGauge,
   },
   {
@@ -63,7 +63,8 @@ export function FeaturesCards() {
         className={classes.description}
         ta="center"
         mt="md"
-        title="description"
+        title="Explore the straightforward process for seamlessly downloading
+        High Quality YouTube videos and audio tracks online."
       >
         Explore the straightforward process for seamlessly downloading
         high-quality YouTube videos and audio tracks.
