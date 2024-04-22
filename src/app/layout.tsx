@@ -283,7 +283,7 @@ window.dataLayer = window.dataLayer || [];
         <MainLayout>{children}</MainLayout>
       </body>
       <GoogleAnalytics gaId="G-3N8N8975P0" />
-      <script
+      {/* <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
@@ -299,12 +299,6 @@ window.dataLayer = window.dataLayer || [];
               "@type": "SoftwareApplication",
               name: "Free Youtube downloader",
               url: "https://www.fast4k.com/",
-              tool: [
-                {
-                  "@type": "HowToTool",
-                  name: "Youtube video downloader",
-                },
-              ],
             },
 
             {
@@ -332,6 +326,17 @@ window.dataLayer = window.dataLayer || [];
               url: "https://www.fast4k.com/",
             },
           ]),
+        }}
+      /> */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Fast4K",
+            url: "https://www.fast4k.com/",
+          }),
         }}
       />
     </html>
