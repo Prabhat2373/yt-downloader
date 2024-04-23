@@ -35,10 +35,12 @@ export function FaqComponent() {
                 variant="separated"
               >
                 <Accordion.Item className={classes.item} value="reset-password">
-                  <Accordion.Control>
-                    How can I reset my password?
-                  </Accordion.Control>
-                  <Accordion.Panel>{placeholder}</Accordion.Panel>
+                  <Accordion.Control>Is Fast4k free to use?</Accordion.Control>
+                  <Accordion.Panel>
+                    Yes, Fast4k is completely free to use for converting YouTube
+                    videos to MP4 and MP3 formats. There are no hidden fees or
+                    subscriptions required.
+                  </Accordion.Panel>
                 </Accordion.Item>
 
                 <Accordion.Item
@@ -46,23 +48,48 @@ export function FaqComponent() {
                   value="another-account"
                 >
                   <Accordion.Control>
-                    Can I create more that one account?
+                    What video quality does Fast4k support?
                   </Accordion.Control>
-                  <Accordion.Panel>{placeholder}</Accordion.Panel>
+                  <Accordion.Panel>
+                    Fast4k supports various video qualities, including standard
+                    resolutions like 480p, 720p, and 1080p, as well as higher
+                    resolutions like 4K and even 8K, depending on the source
+                    video's availability on YouTube.
+                  </Accordion.Panel>
                 </Accordion.Item>
 
+                <Accordion.Item className={classes.item} value="free_to_use">
+                  <Accordion.Control>
+                    Is Fast4k safe and secure to use?
+                  </Accordion.Control>
+                  <Accordion.Panel>
+                    Yes, Fast4k is designed with user safety in mind. We do not
+                    require any software installation or personal information
+                    from users. Your privacy and security are our priorities.
+                  </Accordion.Panel>
+                </Accordion.Item>
                 <Accordion.Item className={classes.item} value="newsletter">
                   <Accordion.Control>
-                    How can I subscribe to monthly newsletter?
+                    Can Fast4k download videos in high-resolution formats like
+                    4K or 8K?
                   </Accordion.Control>
-                  <Accordion.Panel>{placeholder}</Accordion.Panel>
+                  <Accordion.Panel>
+                    Yes, Fast4k supports downloading videos in high-resolution
+                    formats such as 4K and 8K if the original video on YouTube
+                    is available in these qualities.
+                  </Accordion.Panel>
                 </Accordion.Item>
 
                 <Accordion.Item className={classes.item} value="credit-card">
                   <Accordion.Control>
-                    Do you store credit card information securely?
+                    Is there a limit to the number of videos I can download with
+                    Fast4k?
                   </Accordion.Control>
-                  <Accordion.Panel>{placeholder}</Accordion.Panel>
+                  <Accordion.Panel>
+                    Fast4k does not impose any limits on the number of videos
+                    you can download. You can use Fast4k as often as you like,
+                    free of charge.
+                  </Accordion.Panel>
                 </Accordion.Item>
               </Accordion>
             </Grid.Col>

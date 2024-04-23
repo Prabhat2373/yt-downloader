@@ -60,6 +60,7 @@ function TabsComponent({ active, setActive }) {
       }}
       radius="xl"
       size="md"
+      defaultValue={active}
       //   data={["All", "AI/ML", "C++", "Rust", "TypeScript"]}
       data={[
         {

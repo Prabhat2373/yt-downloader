@@ -48,7 +48,13 @@ export default function NewVideoDownloader() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ url: videoUrl }),
-      }).then((response) => response.json());
+      })
+        .then((response) => {
+          console.log("response", response);
+          response.json();
+        })
+        .catch((err) => console.log("errorrr", err));
+      console.log("info", info);
       if (info) {
         // setDownloadFormats(info?.formats);
         const uniqueArray = Array.from(
@@ -71,6 +77,7 @@ export default function NewVideoDownloader() {
       }
       setIsLoading(false);
     } catch (error) {
+      console.log("fetcherror", error);
       setIsLoading(false);
       toast.error("Ohh! Something Went Wrong");
     }
@@ -119,7 +126,7 @@ export default function NewVideoDownloader() {
         };
       });
       return transformOptions(videoOptions, videoQualityLabels);
-    } else {
+    } else if (active === "audio") {
       const audioOptions = audioFormats?.map((format) => {
         return {
           label: format?.audioBitrate?.toString(),
@@ -181,53 +188,50 @@ export default function NewVideoDownloader() {
 
       const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/merge?url=${videoUrl}&format=${selectedFormat}`;
 
-// Open the API URL in a new tab
-const newTab = window.open(apiUrl, "_blank");
+      // Open the API URL in a new tab
+      const newTab = window.open(apiUrl, "_blank");
 
-if (newTab) {
-  // Poll the new tab to check for completion
-  const pollInterval = 1000; // Polling interval in milliseconds
-  const pollTimeout = 50000; // Timeout for polling in milliseconds (e.g., 50 seconds)
-  const startTime = Date.now();
+      if (newTab) {
+        // Poll the new tab to check for completion
+        const pollInterval = 1000; // Polling interval in milliseconds
+        const pollTimeout = 50000; // Timeout for polling in milliseconds (e.g., 50 seconds)
+        const startTime = Date.now();
 
-  const pollCompletion = async () => {
-    try {
-      // Check if the new tab is closed or exceeded the polling timeout
-      if (newTab.closed || Date.now() - startTime > pollTimeout) {
-        console.log("Download completed or timed out.");
-        return;
-      }
+        const pollCompletion = async () => {
+          try {
+            // Check if the new tab is closed or exceeded the polling timeout
+            if (newTab.closed || Date.now() - startTime > pollTimeout) {
+              console.log("Download completed or timed out.");
+              return;
+            }
 
-      // Fetch the state of the new tab
-      const tabState = await newTab.fetch(apiUrl);
+            // Fetch the state of the new tab
+            const tabState = await newTab.fetch(apiUrl);
 
-      // Check if the download is completed successfully
-      if (tabState.ok) {
-        const responseText = await tabState.text();
-        // Check if the response indicates success (e.g., file contents)
-        if (responseText.includes("successful")) {
-          console.log("Download completed successfully.");
-          // Close the new tab upon successful completion
-          newTab.close();
-          // Return focus to the main tab (current window)
-          window.focus();
-          return; // Exit polling loop upon successful completion
-        }
-      }
+            // Check if the download is completed successfully
+            if (tabState.ok) {
+              const responseText = await tabState.text();
+              // Check if the response indicates success (e.g., file contents)
+              if (responseText.includes("successful")) {
+                console.log("Download completed successfully.");
+                // Close the new tab upon successful completion
+                newTab.close();
+                // Return focus to the main tab (current window)
+                window.focus();
+                return; // Exit polling loop upon successful completion
+              }
+            }
 
-      // Continue polling if download is not completed yet
-      setTimeout(pollCompletion, pollInterval);
-    } catch (error) {
-      console.error("Error polling for download completion:", error);
-    }
-  };
+            // Continue polling if download is not completed yet
+            setTimeout(pollCompletion, pollInterval);
+          } catch (error) {
+            console.error("Error polling for download completion:", error);
+          }
+        };
 
-  // Start polling for download completion
-  pollCompletion();
-}
-
-      
-      else {
+        // Start polling for download completion
+        pollCompletion();
+      } else {
         console.error("Failed to open new tab for download.");
         // Handle error scenario (e.g., display error message)
       }
@@ -241,9 +245,11 @@ if (newTab) {
 
   useEffect(() => {
     setSelectedFormat(getOptions()[0]?.value);
-  }, [active, videoFormats]);
+    console.log("selected");
+  }, [active, videoFormats, audioFormats]);
 
   console.log("videoFormats", videoFormats);
+  console.log("active", active);
 
   return (
     <>

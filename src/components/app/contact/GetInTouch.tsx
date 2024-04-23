@@ -68,7 +68,13 @@ export function GetInTouch() {
               />
 
               <Group justify="flex-end" mt="md">
-                <Button type="submit" className={classes.control}>
+                <Button type="submit" 
+                
+                className={classes.control}
+                
+                variant="gradient"
+                gradient={{ from: "#EA00FE", to: "#6228d7" }}
+                >
                   Send message
                 </Button>
               </Group>
