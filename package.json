@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+      "deploy": "pm2 deploy production",
+
     "lint": "next lint"
   },
   "dependencies": {
