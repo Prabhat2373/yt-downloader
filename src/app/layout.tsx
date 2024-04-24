@@ -16,11 +16,14 @@ export const metadata: Metadata = {
     // "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
     "Fast4k - Download Youtube Videos online | 4k, 8k, HDR,1080P",
   description:
-    "Fast4k is your ultimate YouTube video downloader, providing quick conversions to MP4 and high-quality MP3 audio. Simplify your YouTube downloads with Fast4k's efficient service.",
+    "Fast4k is your ultimate YouTube video downloader, providing quick conversions to MP4 and high-quality MP3 audio.",
+  // description:
+  //   "Fast4k is your ultimate YouTube video downloader, providing quick conversions to MP4 and high-quality MP3 audio. Simplify your YouTube downloads with Fast4k's efficient service.",
   applicationName: "Fast4k",
   manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",
   category: "entertainment",
+
   alternates: {
     canonical: "https://www.fast4k.com",
 
@@ -227,6 +230,10 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.fast4k.com/" />
         {/* <meta name="robots" content="index,follow" /> */}
         <meta name="theme-color" content="#319197" />
+        <meta
+          name="google-site-verification"
+          content="MMCc28uLh4bbCHT7XSHMHcXvYNaNTi12Cq1zAJ-7ko0"
+        />
         {/* <link rel="icon" href="/favicon.ico" /> */}
         <link rel="icon" href="/favicon_io/favicon-16x16.png" />
 
@@ -271,6 +278,33 @@ window.dataLayer = window.dataLayer || [];
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
           crossOrigin="anonymous"
         ></script>
+        {/* <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Fast4K",
+              url: "https://www.fast4k.com/",
+            }),
+          }}
+        /> */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              name: "Fast4k",
+              url: "https://www.fast4k.com/",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://www.fast4k.com",
+              },
+            }),
+          }}
+        />
       </Head>
       {/* <script
         async
@@ -283,62 +317,6 @@ window.dataLayer = window.dataLayer || [];
         <MainLayout>{children}</MainLayout>
       </body>
       <GoogleAnalytics gaId="G-3N8N8975P0" />
-      {/* <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Fast4k",
-              alternateName: "Fast4k",
-              url: "https://www.fast4k.com",
-            },
-            {
-              "@context": "http://schema.org",
-              "@type": "SoftwareApplication",
-              name: "Free Youtube downloader",
-              url: "https://www.fast4k.com/",
-            },
-
-            {
-              "@context": "http://schema.org",
-              "@type": "SoftwareApplication",
-              name: "Download Youtube Videos online",
-              url: "https://www.fast4k.com/",
-            },
-            {
-              "@context": "http://schema.org",
-              "@type": "SoftwareApplication",
-              name: "Download YouTube videos & MP3",
-              url: "https://www.fast4k.com/",
-            },
-            {
-              "@context": "http://schema.org",
-              "@type": "SoftwareApplication",
-              name: "Download Youtube Videos",
-              url: "https://www.fast4k.com/",
-            },
-            {
-              "@context": "http://schema.org",
-              "@type": "SoftwareApplication",
-              name: "download high-quality YouTube videos and audio ",
-              url: "https://www.fast4k.com/",
-            },
-          ]),
-        }}
-      /> */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Fast4K",
-            url: "https://www.fast4k.com/",
-          }),
-        }}
-      />
     </html>
   );
 }
