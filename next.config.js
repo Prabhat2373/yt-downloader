@@ -60,6 +60,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  distDir: process.env.BUILD_DIR || '.next',
   swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV !== "development",

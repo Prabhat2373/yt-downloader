@@ -54,7 +54,7 @@ export function FeaturesCards() {
         ta="center"
         mt="sm"
       >
-        How it Works?
+        Why Use Fast4k?
       </Title>
 
       <Text
