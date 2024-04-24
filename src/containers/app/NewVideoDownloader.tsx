@@ -27,6 +27,7 @@ import { toast } from "react-toastify";
 import { IconCircleArrowDownFilled, IconDownload } from "@tabler/icons-react";
 import DownloadContainerSkeleton from "@/components/ui/skeleton/DownloadContainerSkeleton";
 import URLContainer from "./url/URLContainer";
+import SelectFormat from "@/components/select/SelectFormat";
 
 export default function NewVideoDownloader() {
   // const [formats,setFormats]
@@ -51,7 +52,7 @@ export default function NewVideoDownloader() {
       })
         .then((response) => {
           console.log("response", response);
-         return response.json();
+          return response.json();
         })
         .catch((err) => console.log("errorrr", err));
       console.log("info", info);
@@ -298,7 +299,7 @@ export default function NewVideoDownloader() {
                   </div>
                 ) : null}
               </Flex>
-              <Flex direction={"column"} justify={"space-between"}>
+              <Flex direction={"column"} justify={"space-between"} w={"100%"}>
                 {videoFormats?.length || audioFormats?.length ? (
                   <div className="flex justify-start w-full tab-container">
                     <TabsComponent active={active} setActive={setActive} />
@@ -338,28 +339,11 @@ export default function NewVideoDownloader() {
                   </div>
                 </Box>
                 <Flex gap={10} align={"center"}>
-                  <Box w="100%">
-                    <Select
-                      size="md"
-                      radius={"md"}
-                      data={getOptions()}
-                      onChange={(option) => {
-                        console.log("option", option);
-                        setSelectedFormat(option);
-                      }}
-                      placeholder="Select Format.."
-                      allowDeselect={false}
-                      title="Select Format.."
-                      checkIconPosition="right"
-                      //   value={getOptions()?.find(
-                      //     (opt) => opt?.value === selectedFormat
-                      //   )}
-                      value={selectedFormat}
-                      comboboxProps={{
-                        transitionProps: { transition: "pop", duration: 200 },
-                      }}
-                    />
-                  </Box>
+                  <SelectFormat
+                    options={getOptions()}
+                    selectedFormat={selectedFormat}
+                    setSelectedFormat={setSelectedFormat}
+                  />
                   <Box w={"100%"}>
                     <AnimatedButton
                       icon={<IconDownload />}
