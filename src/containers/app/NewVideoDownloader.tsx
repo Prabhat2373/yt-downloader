@@ -51,7 +51,7 @@ export default function NewVideoDownloader() {
       })
         .then((response) => {
           console.log("response", response);
-          response.json();
+         return response.json();
         })
         .catch((err) => console.log("errorrr", err));
       console.log("info", info);
