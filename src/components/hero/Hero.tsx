@@ -33,9 +33,10 @@ function Hero({ children }) {
 
         <Container p={0} size={1000}>
           <Text size="lg" c="dimmed" className={classes.description}>
-            Unlock endless entertainment! Download Youtube Videos Online and
+            {/* Unlock endless entertainment! Download Youtube Videos Online and
             MP3s in High Quality with a single click. <br /> Fast4k—the fastest
-            way to elevate your media experience!
+            way to elevate your media experience! */}
+            Fast4k: Unlock endless entertainment with high-quality downloads!
           </Text>
         </Container>
 
