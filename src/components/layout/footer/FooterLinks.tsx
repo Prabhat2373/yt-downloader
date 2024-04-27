@@ -15,14 +15,14 @@ const data = [
     links: [
       { label: "Features", link: "features" },
       // { label: "Pricing", link: "#" },
-      { label: "Support", link: "contact" },
+      { label: "Contact US", link: "contact" },
       { label: "FAQs", link: "faq" },
     ],
   },
   // {
   //   title: "Project",
   //   links: [
-//     { label: "Contribute", link: "#" },
+  //     { label: "Contribute", link: "#" },
   //     { label: "Media assets", link: "#" },
   //     { label: "Changelog", link: "#" },
   //     { label: "Releases", link: "#" },

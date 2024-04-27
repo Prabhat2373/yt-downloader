@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     // "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
     "Fast4k - Download Youtube Videos online | 4k, 8k, HDR,1080P",
   description:
-    "Fast4k is your ultimate YouTube video downloader, providing quick conversions to MP4 and high-quality MP3 audio.",
+    "Fast4k offers lightning-fast and high-quality downloads of YouTube videos and audio tracks, delivering an unparalleled user experience. Enjoy seamless access to 4K resolution videos and crystal-clear audio downloads with our efficient platform. Discover the ultimate solution for high-quality media extraction, tailored for speed and excellence.",
   // description:
   //   "Fast4k is your ultimate YouTube video downloader, providing quick conversions to MP4 and high-quality MP3 audio. Simplify your YouTube downloads with Fast4k's efficient service.",
   applicationName: "Fast4k",
