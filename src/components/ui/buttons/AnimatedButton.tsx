@@ -53,6 +53,7 @@ const AnimatedButton = ({ children, isLoading, ...props }) => {
       // mt={10}
       radius={"md"}
       loading={isLoading}
+   
       {...props}
     >
       {children}

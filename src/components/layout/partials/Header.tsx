@@ -17,10 +17,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  { link: "/about", label: "Features" },
-  { link: "/pricing", label: "Pricing" },
-  { link: "/learn", label: "Learn" },
-  { link: "/community", label: "Community" },
+  { link: "/features", label: "Features" },
+  { link: "/faqs", label: "FAQs" },
+  { link: "/contact", label: "Contact" },
+  // { link: "/community", label: "Community" },
 ];
 
 function Header() {
@@ -70,9 +70,9 @@ function Header() {
             </Text>
           </Flex>
         </Link>
-        {/* <Group gap={5} visibleFrom="xs">
+        <Group gap={5} visibleFrom="xs">
           {items}
-        </Group> */}
+        </Group>
 
         {/* <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" /> */}
         <ThemeButton />

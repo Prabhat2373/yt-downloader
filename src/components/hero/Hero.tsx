@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Text, Title } from "@mantine/core";
+import { Badge, Container, Text, Title } from "@mantine/core";
 // import { Dots } from "./Dots";
 import { Dots } from "../ui/Dots";
 import classes from "./Hero.module.css";
@@ -15,8 +15,11 @@ function Hero({ children }) {
 
       {/* <BgGrid /> */}
       <div className={classes.inner}>
-        <Title className={classes.title}>
-          Empower Your Media Journey <br /> Download{" "}
+        <Title
+          className={classes.title}
+          title="Streamline Your Media Experience: Download YouTube Videos with Ease!"
+        >
+          Streamline Content Creating <br /> Download{" "}
           <Text
             component="span"
             // gradient={{ from: "#734AEB", to: "#ed5bff" }}
@@ -26,18 +29,20 @@ function Hero({ children }) {
             inherit
             variant="gradient"
           >
-            Youtube Videos
+            YouTube Videos
           </Text>{" "}
-          Effortlessly!
+          with Ease!
         </Title>
 
-        <Container p={0} size={1000}>
-          <Text size="lg" c="dimmed" className={classes.description}>
-            {/* Unlock endless entertainment! Download Youtube Videos Online and
+        <Container p={0} size={1000} className={classes.description}>
+          {/* <Text size="lg" c="dimmed" > */}
+          {/* Unlock endless entertainment! Download Youtube Videos Online and
             MP3s in High Quality with a single click. <br /> Fast4k—the fastest
             way to elevate your media experience! */}
+          <Badge variant="dot" autoContrast>
             Fast4k: Unlock endless entertainment with high-quality downloads!
-          </Text>
+          </Badge>
+          {/* </Text> */}
         </Container>
 
         <div className="hero_content_container box_grid_pattern">

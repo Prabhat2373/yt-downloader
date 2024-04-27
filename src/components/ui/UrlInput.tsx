@@ -16,6 +16,15 @@ export function UrlInput(props: TextInputProps) {
       size="lg"
       placeholder="Search questions"
       rightSectionWidth={42}
+      // unstyled
+      styles={{
+        wrapper: {
+          border: "none",
+        },
+        input: {
+          border: "none",
+        },
+      }}
       leftSection={
         <IconLink style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
       }

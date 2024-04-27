@@ -19,6 +19,10 @@ const URLContainer = ({ videoUrl, setVideoUrl, fetchFormats, isLoading }) => {
               <div className="">
                 <UrlInput
                   value={videoUrl}
+                  style={{
+                    border: "2px solid #c3d8f7",
+                    borderRadius: "18px",
+                  }}
                   error={!!videoUrl && !isValidUrl(videoUrl)}
                   type="url"
                   title="Enter Youtube URL"

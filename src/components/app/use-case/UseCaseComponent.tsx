@@ -13,8 +13,7 @@ const data = [
   {
     image: "video",
     title: "Video Downloading",
-    description:
-      "Effortlessly download youtube videos, including dazzling 4K quality, 8k video with high res audio, from YouTube for seamless offline viewing.",
+    description: `Effortlessly download youtube videos, including dazzling 4K quality, 8k video with high res audio, from YouTube for seamless offline viewing.`,
   },
   {
     image: "lawyers",
@@ -25,8 +24,7 @@ const data = [
   {
     image: "accountants",
     title: "Content Creation",
-    description:
-      "Download Youtube Videos in up to 8K resolution for precise, professional editing and enhance your projects with crisp visuals and precision.",
+    description: `Download Youtube Videos in up to 8K resolution for precise, professional editing and enhance your projects with crisp visuals and precision.`,
   },
   {
     image: "others",

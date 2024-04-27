@@ -5,6 +5,17 @@
   font-size: rem(22px);
   width: 100%;
 
+  &:disabled,
+  &[data-disabled] {
+    /* border-color: light-dark(
+      var(--mantine-color-gray-3),
+      var(--mantine-color-dark-4)
+    ); */
+    background-color: light-dark(#9ca3af, #2d2d2d);
+    color: light-dark(white, #909296);
+    /* opacity: 0.8; */
+  }
+
   /* @media (max-width: $mantine-breakpoint-md) {
     width: 100%;
   } */
