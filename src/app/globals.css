@@ -1,3 +1,15 @@
+/* @font-face {
+  font-family: "YourFont";
+  src: url("/fonts/YourFont-Regular.ttf") format("truetype");
+
+  font-weight: normal;
+  font-style: normal;
+} */
+
+body {
+  font-family: "Nohemi", sans-serif !important;
+}
+
 .background-container {
   position: fixed;
   top: -29.2px;

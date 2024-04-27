@@ -58,6 +58,16 @@
 
 /** @type {import('next').NextConfig} */
 
+// // next.config.js
+const withFonts = require('next-fonts');
+
+// module.exports = withFonts({
+//   webpack(config, options) {
+//     return config;
+//   }
+// });
+
+
 const nextConfig = {
   reactStrictMode: true,
   distDir: process.env.BUILD_DIR || '.next',
@@ -77,4 +87,18 @@ const withPWA = require("next-pwa")({
   skipWaiting: true,
 });
 
-module.exports = withPWA(nextConfig);
+// module.exports = withPWA(nextConfig);
+module.exports = withFonts(
+  withPWA({
+    ...nextConfig,
+    pwa: {
+      dest: "public",
+      // disable: process.env.NODE_ENV === "development",
+      register: true,
+      skipWaiting: true,
+    },
+    webpack(config, options) {
+      return config;
+    },
+  })
+);
