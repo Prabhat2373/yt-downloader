@@ -39,12 +39,22 @@ function Hero({ children }) {
           {/* Unlock endless entertainment! Download Youtube Videos Online and
             MP3s in High Quality with a single click. <br /> Fast4k—the fastest
             way to elevate your media experience! */}
-          <Badge variant="dot" autoContrast>
+          <Badge variant="dot" autoContrast size={"sm"}>
             Fast4k: Unlock endless entertainment with high-quality downloads!
           </Badge>
           {/* </Text> */}
         </Container>
 
+        <Container p={0} size={1000} className={classes.tagline}>
+          {/* <Text size="lg" c="dimmed" > */}
+          {/* Unlock endless entertainment! Download Youtube Videos Online and
+            MP3s in High Quality with a single click. <br /> Fast4k—the fastest
+            way to elevate your media experience! */}
+          <Text fw={"normal"} c="dimmed">
+            Fast4k: Unlock endless entertainment with high-quality downloads!
+          </Text>
+          {/* </Text> */}
+        </Container>
         <div className="hero_content_container box_grid_pattern">
           {children}
         </div>

@@ -23,7 +23,7 @@ export function GetInTouch() {
       justify={"center"}
       align="center"
     >
-      <Paper shadow="md" radius="lg">
+      <Paper shadow="md" radius="lg" w={"70%"}>
         <div className={classes.wrapper}>
           <div
             className={classes.contacts}

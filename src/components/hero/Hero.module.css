@@ -54,6 +54,17 @@
   @media (max-width: $mantine-breakpoint-xs) {
     text-align: left;
     font-size: var(--mantine-font-size-md);
+    display: none;
+  }
+  /* @meda (max-width: 400px) {
+    display: none;
+  } */
+}
+.tagline {
+  @media (min-width: $mantine-breakpoint-xs) {
+    text-align: left;
+    font-size: var(--mantine-font-size-md);
+    display: none;
   }
 }
 

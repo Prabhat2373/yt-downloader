@@ -7,6 +7,7 @@ import { Field, Form, Formik } from "formik";
 import { contactFormValidation } from "@/validators/contactus.validator";
 import { toast } from "react-toastify";
 import AnimatedButton from "@/components/ui/buttons/AnimatedButton";
+import ErrorController from "@/components/form/ErrorController";
 
 const ContactUsFormContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +18,7 @@ const ContactUsFormContainer = () => {
     message: "",
   };
 
-  const handleSubmit = async (data: typeof initialValues,actions) => {
+  const handleSubmit = async (data: typeof initialValues, actions) => {
     try {
       setIsLoading(true);
       const api = await fetch(
@@ -37,8 +38,8 @@ const ContactUsFormContainer = () => {
         setIsLoading(false);
         toast.success(res?.message);
         actions?.resetForm({
-            values:initialValues
-        })
+          values: initialValues,
+        });
       }
       setIsLoading(false);
     } catch (err) {
@@ -50,12 +51,16 @@ const ContactUsFormContainer = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={contactFormValidation}
+      validateOnChange={false}
+      validateOnBlur={false}
+      validateOnMount={false}
     >
       {({ values, setFieldValue, handleChange, errors }) => {
         console.log("values", values);
         console.log("errors", errors);
         return (
           <Form>
+            <ErrorController />
             <div className={classes.fields}>
               <SimpleGrid cols={{ base: 1, sm: 2 }}>
                 <Field

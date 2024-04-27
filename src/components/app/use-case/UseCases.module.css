@@ -21,7 +21,8 @@
   text-transform: uppercase;
   font-weight: 800;
   font-size: var(--mantine-font-size-sm);
-  color: var(--mantine-color-blue-light-color);
+  /* color: var(--mantine-color-blue-light-color); */
+  color: #9921e6;
   letter-spacing: rem(0.5px);
 }
 
