@@ -48,6 +48,8 @@ export function UseCaseComponent() {
           style={{
             width: "90%",
           }}
+          alt={item?.description}
+          title={item?.title}
         />
       </ThemeIcon>
 
@@ -55,9 +57,7 @@ export function UseCaseComponent() {
         <Text fw={700} fz="lg" className={classes.itemTitle} title={item.title}>
           {item.title}
         </Text>
-        <Text c="dimmed" title={item.description}>
-          {item.description}
-        </Text>
+        <Text title={item.description}>{item.description}</Text>
       </div>
     </div>
   ));
@@ -80,7 +80,7 @@ export function UseCaseComponent() {
 
       <Container size={660} p={0}>
         <Text
-          c="dimmed"
+          // c="dimmed"
           className={classes.description}
           title="Explore the limitless possibilities of Fast4k and revolutionize your
           media consumption with these captivating use cases."
