@@ -319,10 +319,6 @@ window.dataLayer = window.dataLayer || [];
               "@type": "WebSite",
               name: "Fast4k",
               url: "https://www.fast4k.com/",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://www.fast4k.com",
-              },
             }),
           }}
         />
