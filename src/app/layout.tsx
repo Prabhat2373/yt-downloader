@@ -301,16 +301,6 @@ window.dataLayer = window.dataLayer || [];
             }),
           }}
         /> */}
-      </Head>
-      {/* <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
-        crossOrigin="anonymous"
-      ></S> */}
-      <body className={inter.className}>
-        <ColorSchemeScript />
-
-        <MainLayout>{children}</MainLayout>
         <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -322,6 +312,16 @@ window.dataLayer = window.dataLayer || [];
             }),
           }}
         />
+      </Head>
+      {/* <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
+        crossOrigin="anonymous"
+      ></S> */}
+      <body className={inter.className}>
+        <ColorSchemeScript />
+
+        <MainLayout>{children}</MainLayout>
       </body>
       <GoogleAnalytics gaId="G-3N8N8975P0" />
     </html>
