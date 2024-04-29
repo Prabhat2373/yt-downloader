@@ -13,7 +13,7 @@ const data = [
   {
     image: "video",
     title: "Video Downloading",
-    description: `Effortlessly download youtube videos, including dazzling 4K quality, 8k video with high res audio, from YouTube for seamless offline viewing.`,
+    description: `Effortlessly download youtube videos, 4K quality, 8k video with high res audio, easily convert youtube video url into high quality video.`,
   },
   {
     image: "lawyers",
@@ -30,7 +30,7 @@ const data = [
     image: "others",
     title: "Offline Entertainment",
     description:
-      "Use Fast4k to download youtube videos and MP3s from YouTube, ensuring uninterrupted entertainment on the go with exceptional quality.",
+      "Use Fast4k to download youtube videos and MP3s from YouTube, it supports downlading in highest quality possible.",
   },
 ];
 

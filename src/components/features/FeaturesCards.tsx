@@ -17,7 +17,7 @@ const mockdata = [
   {
     title: "Extreme performance",
     description:
-      "Download Youtube Videos Online in 8k, 4k, HDR, 1080p in just couple of seconds. which is possible with parallel streaming. ",
+      "Download Youtube Videos Online in 8k, 4k, HDR, 1080p in just couple of seconds. with user friendly experience. ",
     icon: IconGauge,
   },
   {
