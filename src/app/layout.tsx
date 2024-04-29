@@ -301,8 +301,17 @@ window.dataLayer = window.dataLayer || [];
             }),
           }}
         /> */}
+      </Head>
+      {/* <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
+        crossOrigin="anonymous"
+      ></S> */}
+      <body className={inter.className}>
+        <ColorSchemeScript />
 
-        <script
+        <MainLayout>{children}</MainLayout>
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -317,16 +326,6 @@ window.dataLayer = window.dataLayer || [];
             }),
           }}
         />
-      </Head>
-      {/* <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
-        crossOrigin="anonymous"
-      ></script> */}
-      <body className={inter.className}>
-        <ColorSchemeScript />
-
-        <MainLayout>{children}</MainLayout>
       </body>
       <GoogleAnalytics gaId="G-3N8N8975P0" />
     </html>
