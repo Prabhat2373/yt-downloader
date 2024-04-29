@@ -301,26 +301,16 @@ window.dataLayer = window.dataLayer || [];
             }),
           }}
         /> */}
-        <Script
+        {/* <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org/",
-              "@type": "WebSite",
-              name: "Fast4k",
-              url: "https://www.fast4k.com/",
-            }),
+            __html: JSON.stringify(),
           }}
-        />
+        /> */}
       </Head>
-      {/* <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
-        crossOrigin="anonymous"
-      ></S> */}
+
       <body className={inter.className}>
         <ColorSchemeScript />
-
         <MainLayout>{children}</MainLayout>
       </body>
       <GoogleAnalytics gaId="G-3N8N8975P0" />
