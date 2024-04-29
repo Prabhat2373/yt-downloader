@@ -12,9 +12,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title:
-    // "Fast4k - YouTube Video Downloader & Converter | Free MP4 & MP3 Downloads",
-    "Download Youtube Videos online | 4k, 8k, HDR,1080P",
+  title: "Download Youtube Videos online | 4k, 8k, HDR,1080P",
   description:
     "Fast4k offers lightning-fast and high-quality downloads of YouTube videos and audio tracks, delivering an unparalleled user experience. Enjoy seamless access to 4K resolution videos and crystal-clear audio downloads with our efficient platform. Discover the ultimate solution for high-quality media extraction, tailored for speed and excellence.",
   // description:
