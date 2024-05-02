@@ -12,6 +12,7 @@ import {
 import { IconGauge, IconUser, IconCookie } from "@tabler/icons-react";
 import classes from "../../components/features/FeaturesCards.module.css";
 import { CardGradient } from "../cards/CardGradient";
+import StepCard from "../cards/StepCard";
 
 const mockdata = [
   {
@@ -71,9 +72,17 @@ export function HowToUse() {
         videos and audio effortlessly.
       </Text>
 
-      <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
+      {/* <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
         {features}
       </SimpleGrid>
+       */}
+      {mockdata?.map((data, index) => {
+        return (
+          <>
+            <StepCard data={data} index={index} />
+          </>
+        );
+      })}
     </Container>
   );
 }
