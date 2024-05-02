@@ -206,7 +206,6 @@ export const metadata: Metadata = {
         url: "/favicon_io/favicon-32x32.png", // Must be an absolute URL
         width: 1800,
         height: 1600,
-        alt: "Fast4K",
       },
     ],
     locale: "en_US",
