@@ -8,6 +8,14 @@ const page = () => {
     "@type": "WebSite",
     name: "Fast4k",
     url: "https://www.fast4k.com/",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://www.fast4k.com/?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
   return (
     <>
