@@ -11,10 +11,10 @@ const page = () => {
   };
   return (
     <>
-      {/* <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      /> */}
+      />
       <MainPageContainer />
     </>
   );
