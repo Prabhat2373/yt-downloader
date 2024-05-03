@@ -1,5 +1,6 @@
 import MainPageContainer from "@/containers/app/MainPageContainer";
 import YoutubeDownloaderContainer from "@/containers/app/YoutubeDownloaderContainer";
+import Head from "next/head";
 import React from "react";
 
 const page = () => {
@@ -23,6 +24,9 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      <Head>
+        <title>Download Youtube Videos online | 4k, 8k, HDR,1080P</title>
+      </Head>
       <MainPageContainer />
     </>
   );
