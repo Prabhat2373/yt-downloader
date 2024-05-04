@@ -46,7 +46,7 @@ function Header() {
   const [opened, { toggle }] = useDisclosure(false);
   // const [active, setActive] = useState(links[0].link);
   const active =
-    links?.find((link) => link?.link?.includes(pathname))?.link || "";
+    links?.find((link) => link?.link?.includes(pathname))?.link || "/app";
   console.log("active", active);
   const { colorScheme } = useMantineColorScheme();
   console.log("colorSchemeee", colorScheme);
@@ -56,6 +56,9 @@ function Header() {
       href={link.link}
       className={classes.link}
       data-active={active === link.link || undefined}
+      // data-active={
+      //   active === "/app" && link.link === "/" ? true : active === link.link
+      // }
       // onClick={(event) => {
       //   event.preventDefault();
       //   setActive(link.link);
