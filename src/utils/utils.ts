@@ -43,8 +43,7 @@ export function convertSecondsToMinutes(seconds) {
   return minutesStr + ":" + secondsStr;
 }
 
-
-export const isValidUrl = (videoUrl:string) => {
+export const isValidUrl = (videoUrl: string) => {
   try {
     // Attempt to create a new URL object with the provided videoUrl
     const url = new URL(videoUrl);
