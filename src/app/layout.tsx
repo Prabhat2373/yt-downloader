@@ -152,7 +152,7 @@ export const metadata: Metadata = {
   themeColor: "#8129c3",
   twitter: {
     card: "https://www.fast4k.com/app_logo.png",
-    title: "Fast4k",
+    title: "Fast4K | Download Youtube Videos online | 4k, 8k, HDR,1080P",
     description:
       "Fast4k - Download Youtube Videos online | 4k, 8k, HDR for FREE",
 
