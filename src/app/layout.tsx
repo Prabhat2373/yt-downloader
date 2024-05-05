@@ -221,7 +221,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="canonical" href="https://www.fast4k.com/" />
+        <link rel="canonical" href="https://www.fast4k.com" />
         {/* <meta name="robots" content="index,follow" /> */}
         <meta name="theme-color" content="#319197" />
         <meta
@@ -245,64 +245,17 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
           rel="stylesheet"
         />
-        <script
+        {/* GOOGLE ADS SPECIFIC  */}
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-3N8N8975P0"
-        ></script>
-        {/* <script>
-window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        ></script> */}
 
-  gtag('config', 'G-3N8N8975P0');
-</script> */}
-
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-        {/* <meta
-          property="og:title"
-          content="Fast4k | Download High-Quality YouTube Videos & Audio"
-        />
-        
-        <meta itemProp="name" content="Fast4K" /> */}
-        {/* <link
-          rel="shortcut icon"
-          type="image/x-icon"
-          href="/favicon_io/favicon-16x16.png"
-        /> */}
-        {/* <meta
-          property="og:image"
-          content="https://www.fast4k.com/_next/image?url=%2Fapp_logo.png&w=96&q=75"
-        />
-        <meta property="og:type" content="website" /> */}
-        {/* <meta charset="utf-8" /> */}
-        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
-        <script
-          src="https://assets.usestyle.ai/seonajsplugin"
-          defer
-          id="seona-js-plugin"
-        ></script>
-        <script
+        {/* <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6537136581474001"
           crossOrigin="anonymous"
-        ></script>
-        {/* <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Fast4K",
-              url: "https://www.fast4k.com/",
-            }),
-          }}
-        /> */}
-        {/* <Script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(),
-          }}
-        /> */}
+        ></script> */}
       </Head>
 
       <body className={inter.className}>
