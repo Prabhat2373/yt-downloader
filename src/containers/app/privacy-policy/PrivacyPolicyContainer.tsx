@@ -65,7 +65,11 @@ const PrivacyPolicyContainer = () => {
             <Text>
               If you have any questions or concerns about our Privacy Policy,
               please contact us at
-              <a href="mailto:fast4k2373@gmail.com">fast4k2373@gmail.com</a>
+              <a href="mailto:fast4k2373@gmail.com">
+                fast4k2373@gmail.com
+              </a>{" "}
+              <br />
+              By using Fast4K, you agree to the terms of this Privacy Policy.
             </Text>
           </Flex>
         </Flex>
