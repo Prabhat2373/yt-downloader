@@ -16,6 +16,7 @@ const data = [
       { label: "Features", link: "features" },
       // { label: "Pricing", link: "#" },
       { label: "Contact US", link: "contact" },
+      { label: "Privacy Policy", link: "privacy-policy" },
       { label: "FAQs", link: "faq" },
     ],
   },
