@@ -7,7 +7,7 @@ const page = () => {
   const schema = {
     "@context": "https://schema.org/",
     "@type": "WebSite",
-    name: "Fast4k",
+    name: "Youtube Video Downloader",
     url: "https://www.fast4k.com/",
     potentialAction: {
       "@type": "SearchAction",
